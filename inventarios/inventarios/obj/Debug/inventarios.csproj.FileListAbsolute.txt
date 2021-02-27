@@ -1,0 +1,10 @@
+C:\Users\edgar\Documents\Proyecto Investario\inventarios\inventarios\bin\Debug\inventarios.exe.config
+C:\Users\edgar\Documents\Proyecto Investario\inventarios\inventarios\bin\Debug\inventarios.exe
+C:\Users\edgar\Documents\Proyecto Investario\inventarios\inventarios\bin\Debug\inventarios.pdb
+C:\Users\edgar\Documents\Proyecto Investario\inventarios\inventarios\obj\Debug\inventarios.csprojAssemblyReference.cache
+C:\Users\edgar\Documents\Proyecto Investario\inventarios\inventarios\obj\Debug\inventarios.Properties.Resources.resources
+C:\Users\edgar\Documents\Proyecto Investario\inventarios\inventarios\obj\Debug\inventarios.csproj.GenerateResource.cache
+C:\Users\edgar\Documents\Proyecto Investario\inventarios\inventarios\obj\Debug\inventarios.csproj.CoreCompileInputs.cache
+C:\Users\edgar\Documents\Proyecto Investario\inventarios\inventarios\obj\Debug\inventarios.exe
+C:\Users\edgar\Documents\Proyecto Investario\inventarios\inventarios\obj\Debug\inventarios.pdb
+C:\Users\edgar\Documents\Proyecto Investario\inventarios\inventarios\obj\Debug\inventarios.Form1.resources
