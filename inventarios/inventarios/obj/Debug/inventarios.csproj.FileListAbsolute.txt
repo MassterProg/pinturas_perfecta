@@ -38,3 +38,4 @@ C:\Users\Uriel\Desktop\pinturas_perfecta\inventarios\inventarios\bin\Debug\Pintu
 C:\Users\Uriel\Desktop\pinturas_perfecta\inventarios\inventarios\bin\Debug\Pinturas Perfecta.application
 C:\Users\Uriel\Desktop\pinturas_perfecta\inventarios\inventarios\obj\Debug\Pinturas Perfecta.exe.manifest
 C:\Users\Uriel\Desktop\pinturas_perfecta\inventarios\inventarios\obj\Debug\Pinturas Perfecta.application
+C:\Users\Uriel\Desktop\pinturas_perfecta\inventarios\inventarios\obj\Debug\inventarios.FormularioClientes.resources
