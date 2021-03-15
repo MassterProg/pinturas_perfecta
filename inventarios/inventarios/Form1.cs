@@ -54,7 +54,13 @@ namespace inventarios
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form clientes = new Clientes();
+            clientes.Show();
+        }
+
+
 
 
 
