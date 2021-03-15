@@ -23,16 +23,24 @@ namespace inventarios
             Application.Exit();//cierra la ventana del programa
         }
 
+        int LX, LY;
+
         private void btnMax_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
+            LX = this.Location.X;
+            LY = this.Location.Y;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             btnMax.Visible = false;
             btnResta.Visible = true;
         }
 
         private void btnResta_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
+            //this.WindowState = FormWindowState.Normal;
+            this.Size = new Size(1200, 600);
+            this.Location = new Point(LX, LY);
             btnResta.Visible = false;
             btnMax.Visible = true;
         }
@@ -40,8 +48,6 @@ namespace inventarios
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -57,25 +63,14 @@ namespace inventarios
         private void button1_Click(object sender, EventArgs e)
         {
             Form clientes = new Clientes();
+            AddOwnedForm(clientes);
+            clientes.TopLevel = false;
+            clientes.Dock = DockStyle.Fill;
+            this.Controls.Add(clientes);
+            this.Tag = clientes;
+            clientes.BringToFront();
             clientes.Show();
         }
-
-
-
-
-
-
-
-
-        /*private void btnCerrar_MouseHover(object sender, EventArgs e)
-        {
-            btnCerrar.BackColor = Color.Red;
-        }
-
-        private void btnCerrar_MouseLeave(object sender, EventArgs e)
-        {
-            btnCerrar.BackColor = Color.Transparent;
-        }*/
 
 
     }

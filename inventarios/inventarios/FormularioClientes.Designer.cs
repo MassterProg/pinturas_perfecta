@@ -59,6 +59,7 @@
             this.BarraTit.Name = "BarraTit";
             this.BarraTit.Size = new System.Drawing.Size(334, 42);
             this.BarraTit.TabIndex = 1;
+            this.BarraTit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTit_MouseDown);
             // 
             // btnCerrar
             // 
@@ -70,6 +71,7 @@
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 1;
             this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // pictureBox2
             // 

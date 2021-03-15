@@ -61,8 +61,13 @@ namespace inventarios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form agregarClientes = new FormularioClientes();
-            agregarClientes.Show();
+            Form agrClts = new FormularioClientes();    
+            agrClts.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
