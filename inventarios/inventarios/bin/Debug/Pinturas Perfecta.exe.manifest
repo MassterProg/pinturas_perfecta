@@ -115,14 +115,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pinturas Perfecta.exe" size="968656">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pinturas Perfecta.exe" size="971216">
       <assemblyIdentity name="Pinturas Perfecta" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rkbH2Q+rkd6jaaiEyHgt4xQ4Ir2ZlQ1w1x4leE6fU88=</dsig:DigestValue>
+        <dsig:DigestValue>Tz+vNyVHShmXE9FcyiqPehUq66UmzzCDnS1HnySR8cI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -58,5 +58,11 @@ namespace inventarios
             adapt.Dispose();
             conexionBD.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form agregarClientes = new FormularioClientes();
+            agregarClientes.Show();
+        }
     }
 }
