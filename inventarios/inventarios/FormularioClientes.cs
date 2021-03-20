@@ -33,5 +33,22 @@ namespace inventarios
         {
             this.Close();
         }
+
+        private void btnAgregaClt_Click(object sender, EventArgs e)
+        {
+            String id = boxid.Text;
+            String nom = boxNom.Text;
+            String apeido = Boxapeido.Text;
+            String email = Boxemail.Text;
+            String dir = Boxdirec.Text;
+
+
+
+
+
+
+
+
+        }
     }
 }
