@@ -69,3 +69,5 @@ D:\Documentos\GitHub\pinturas_perfecta\inventarios\inventarios\obj\Debug\Pintura
 D:\Documentos\GitHub\pinturas_perfecta\inventarios\inventarios\obj\Debug\inventarios.csproj.CopyComplete
 D:\Documentos\GitHub\pinturas_perfecta\inventarios\inventarios\obj\Debug\Pinturas Perfecta.exe
 D:\Documentos\GitHub\pinturas_perfecta\inventarios\inventarios\obj\Debug\Pinturas Perfecta.pdb
+D:\Documentos\GitHub\pinturas_perfecta\inventarios\inventarios\bin\Debug\MySql.Data.dll
+D:\Documentos\GitHub\pinturas_perfecta\inventarios\inventarios\bin\Debug\System.Numerics.Vectors.dll

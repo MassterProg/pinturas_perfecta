@@ -42,7 +42,7 @@
             this.Boxapeido = new System.Windows.Forms.TextBox();
             this.Boxemail = new System.Windows.Forms.TextBox();
             this.Boxdirec = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btncCls = new System.Windows.Forms.Button();
             this.btnAgregaClt = new System.Windows.Forms.Button();
             this.BarraTit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
@@ -188,20 +188,21 @@
             this.Boxdirec.Size = new System.Drawing.Size(222, 24);
             this.Boxdirec.TabIndex = 14;
             // 
-            // button1
+            // btncCls
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(224)))), ((int)(((byte)(234)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button1.Location = new System.Drawing.Point(33, 311);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 36);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Limpiar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btncCls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(224)))), ((int)(((byte)(234)))));
+            this.btncCls.FlatAppearance.BorderSize = 0;
+            this.btncCls.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.btncCls.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncCls.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncCls.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btncCls.Location = new System.Drawing.Point(33, 311);
+            this.btncCls.Name = "btncCls";
+            this.btncCls.Size = new System.Drawing.Size(79, 36);
+            this.btncCls.TabIndex = 15;
+            this.btncCls.Text = "Limpiar";
+            this.btncCls.UseVisualStyleBackColor = false;
+            this.btncCls.Click += new System.EventHandler(this.btncCls_Click);
             // 
             // btnAgregaClt
             // 
@@ -227,7 +228,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(334, 368);
             this.Controls.Add(this.btnAgregaClt);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btncCls);
             this.Controls.Add(this.Boxdirec);
             this.Controls.Add(this.Boxemail);
             this.Controls.Add(this.Boxapeido);
@@ -265,7 +266,7 @@
         private System.Windows.Forms.TextBox Boxapeido;
         private System.Windows.Forms.TextBox Boxemail;
         private System.Windows.Forms.TextBox Boxdirec;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btncCls;
         private System.Windows.Forms.Button btnAgregaClt;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,13 +43,41 @@ namespace inventarios
             String email = Boxemail.Text;
             String dir = Boxdirec.Text;
 
+            String consulta = "INSERT INTO clientes (idCliente, Nombre, Apellido, Email, Direccion) VALUES ('" + id + "','" + nom + "', '" + apeido + "', '" + email + "', '" + dir + "')";
 
+            MySqlConnection conexionBD = Conexion.verificarBD();
+            conexionBD.Open();
 
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Registro guardado");
+                limpiar();
+            }
+            catch(MySqlException ex)
+            {
+                MessageBox.Show("Error al guardar" + ex.Message);
+            }
+            finally
+            {
+                conexionBD.Close();
+            }
 
+        }
 
+        private void limpiar()
+        {
+            boxid.Text = "";
+            boxNom.Text = "";
+            Boxapeido.Text = "";
+            Boxemail.Text = "";
+            Boxdirec.Text = "";
+        }
 
-
-
+        private void btncCls_Click(object sender, EventArgs e)
+        {
+            limpiar();
         }
     }
 }
