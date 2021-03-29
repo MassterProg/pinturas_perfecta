@@ -43,8 +43,9 @@ namespace inventarios
             this.button3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panelCtls = new System.Windows.Forms.Panel();
+            this.BtnCltes = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BarraTit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
@@ -52,6 +53,7 @@ namespace inventarios
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelizq.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // BarraTit
@@ -137,12 +139,12 @@ namespace inventarios
             this.panelizq.Controls.Add(this.button3);
             this.panelizq.Controls.Add(this.panel2);
             this.panelizq.Controls.Add(this.button2);
-            this.panelizq.Controls.Add(this.panel1);
-            this.panelizq.Controls.Add(this.button1);
+            this.panelizq.Controls.Add(this.panelCtls);
+            this.panelizq.Controls.Add(this.BtnCltes);
             this.panelizq.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelizq.Location = new System.Drawing.Point(0, 38);
             this.panelizq.Name = "panelizq";
-            this.panelizq.Size = new System.Drawing.Size(230, 562);
+            this.panelizq.Size = new System.Drawing.Size(229, 562);
             this.panelizq.TabIndex = 1;
             // 
             // panel4
@@ -217,36 +219,50 @@ namespace inventarios
             this.button2.Text = "Productos";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // panelCtls
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.panel1.Location = new System.Drawing.Point(0, 29);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 42);
-            this.panel1.TabIndex = 0;
+            this.panelCtls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.panelCtls.Location = new System.Drawing.Point(0, 29);
+            this.panelCtls.Name = "panelCtls";
+            this.panelCtls.Size = new System.Drawing.Size(10, 42);
+            this.panelCtls.TabIndex = 0;
             // 
-            // button1
+            // BtnCltes
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(224)))), ((int)(((byte)(234)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(6, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(224, 42);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Clientes";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BtnCltes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(224)))), ((int)(((byte)(234)))));
+            this.BtnCltes.FlatAppearance.BorderSize = 0;
+            this.BtnCltes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.BtnCltes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCltes.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCltes.Image = ((System.Drawing.Image)(resources.GetObject("BtnCltes.Image")));
+            this.BtnCltes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCltes.Location = new System.Drawing.Point(6, 29);
+            this.BtnCltes.Name = "BtnCltes";
+            this.BtnCltes.Size = new System.Drawing.Size(224, 42);
+            this.BtnCltes.TabIndex = 1;
+            this.BtnCltes.Text = "Clientes";
+            this.BtnCltes.UseVisualStyleBackColor = false;
+            this.BtnCltes.Click += new System.EventHandler(this.btnClts_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(227, 38);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(973, 562);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 600);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelizq);
             this.Controls.Add(this.BarraTit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -259,6 +275,7 @@ namespace inventarios
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelizq.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,19 +284,20 @@ namespace inventarios
 
         private System.Windows.Forms.Panel BarraTit;
         private System.Windows.Forms.Panel panelizq;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox btnMax;
         private System.Windows.Forms.PictureBox btnMin;
         private System.Windows.Forms.PictureBox btnResta;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Button BtnCltes;
+        public System.Windows.Forms.Button button4;
+        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Panel panelCtls;
+        public System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Panel panel2;
     }
 }
 

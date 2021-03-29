@@ -27,7 +27,7 @@ namespace inventarios
 
         private void btnMax_Click(object sender, EventArgs e)
         {
-            //this.WindowState = FormWindowState.Maximized;
+            
             LX = this.Location.X;
             LY = this.Location.Y;
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
@@ -38,7 +38,7 @@ namespace inventarios
 
         private void btnResta_Click(object sender, EventArgs e)
         {
-            //this.WindowState = FormWindowState.Normal;
+            
             this.Size = new Size(1200, 600);
             this.Location = new Point(LX, LY);
             btnResta.Visible = false;
@@ -60,8 +60,9 @@ namespace inventarios
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnClts_Click(object sender, EventArgs e)
         {
+            
             Form clientes = new Clientes();
             AddOwnedForm(clientes);
             clientes.TopLevel = false;
@@ -71,6 +72,9 @@ namespace inventarios
             clientes.BringToFront();
             clientes.Show();
         }
+
+        
+        
 
 
     }

@@ -37,6 +37,8 @@ namespace inventarios
 
         private void btnAgregaClt_Click(object sender, EventArgs e)
         {
+
+            
             String id = boxid.Text;
             String nom = boxNom.Text;
             String apeido = Boxapeido.Text;

@@ -71,3 +71,36 @@ D:\Documentos\GitHub\pinturas_perfecta\inventarios\inventarios\obj\Debug\Pintura
 D:\Documentos\GitHub\pinturas_perfecta\inventarios\inventarios\obj\Debug\Pinturas Perfecta.pdb
 D:\Documentos\GitHub\pinturas_perfecta\inventarios\inventarios\bin\Debug\MySql.Data.dll
 D:\Documentos\GitHub\pinturas_perfecta\inventarios\inventarios\bin\Debug\System.Numerics.Vectors.dll
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\Pinturas Perfecta.exe.config
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\Pinturas Perfecta.exe.manifest
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\Pinturas Perfecta.application
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\Pinturas Perfecta.exe
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\Pinturas Perfecta.pdb
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\MySql.Data.dll
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\Google.Protobuf.dll
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\Zstandard.Net.dll
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\BouncyCastle.Crypto.dll
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\Ubiety.Dns.Core.dll
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\Renci.SshNet.dll
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\System.Memory.dll
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\System.Buffers.dll
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\K4os.Compression.LZ4.dll
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\K4os.Hash.xxHash.dll
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\System.Numerics.Vectors.dll
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\bin\Debug\MySql.Data.xml
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\inventarios.csprojAssemblyReference.cache
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\Pinturas Perfecta.exe.config
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\inventarios.Clientes.resources
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\inventarios.Form1.resources
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\inventarios.FormularioClientes.resources
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\inventarios.Properties.Resources.resources
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\inventarios.csproj.GenerateResource.cache
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\inventarios.csproj.CoreCompileInputs.cache
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\Pinturas Perfecta.exe.manifest
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\Pinturas Perfecta.application
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\inventarios.csproj.CopyComplete
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\Pinturas Perfecta.exe
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\Pinturas Perfecta.pdb
+D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\inventarios.EditarForm.resources
