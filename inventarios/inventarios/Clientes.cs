@@ -62,8 +62,41 @@ namespace inventarios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form agrClts = new FormularioClientes();    
-            agrClts.Show();
+            using (FormularioClientes frm = new FormularioClientes() { })
+            {
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    
+                    String id = frm.GetMediador().getId();
+                    String nom = frm.GetMediador().getNombre();
+                    String apeido = frm.GetMediador().getApellido();
+                    String email = frm.GetMediador().getEmail();
+                    String dir = frm.GetMediador().getDireccion();
+                    
+                    String consulta = "INSERT INTO clientes (idCliente, Nombre, Apellido, Email, Direccion) VALUES ('" + id + "','" + nom + "', '" + apeido + "', '" + email + "', '" + dir + "')";
+
+                    MySqlConnection conexionBD = Conexion.verificarBD();
+                    conexionBD.Open();
+
+                    try
+                    {
+                        MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Registro guardado");
+                        //limpiar();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show("Error al guardar" + ex.Message);
+                    }
+                    finally
+                    {
+                        conexionBD.Close();
+                    }
+
+                    DisplayData();
+                }
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -108,7 +141,9 @@ namespace inventarios
             }
             else
                 MessageBox.Show("Debe seleccionar toda una fila");
-            
+
+            DisplayData();
+
         }
 
 

@@ -33,15 +33,15 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.boxid = new System.Windows.Forms.TextBox();
+            this.boxID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.boxNom = new System.Windows.Forms.TextBox();
-            this.Boxapeido = new System.Windows.Forms.TextBox();
-            this.Boxemail = new System.Windows.Forms.TextBox();
-            this.Boxdirec = new System.Windows.Forms.TextBox();
+            this.boxApellido = new System.Windows.Forms.TextBox();
+            this.boxEmail = new System.Windows.Forms.TextBox();
+            this.boxDirec = new System.Windows.Forms.TextBox();
             this.btncCls = new System.Windows.Forms.Button();
             this.btnAgregaClt = new System.Windows.Forms.Button();
             this.BarraTit.SuspendLayout();
@@ -94,15 +94,15 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "idCliente";
             // 
-            // boxid
+            // boxID
             // 
-            this.boxid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.boxid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.boxid.Location = new System.Drawing.Point(100, 66);
-            this.boxid.Multiline = true;
-            this.boxid.Name = "boxid";
-            this.boxid.Size = new System.Drawing.Size(222, 24);
-            this.boxid.TabIndex = 3;
+            this.boxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.boxID.Location = new System.Drawing.Point(100, 66);
+            this.boxID.Multiline = true;
+            this.boxID.Name = "boxID";
+            this.boxID.Size = new System.Drawing.Size(222, 24);
+            this.boxID.TabIndex = 3;
             // 
             // label2
             // 
@@ -158,35 +158,35 @@
             this.boxNom.Size = new System.Drawing.Size(222, 24);
             this.boxNom.TabIndex = 11;
             // 
-            // Boxapeido
+            // boxApellido
             // 
-            this.Boxapeido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boxapeido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.Boxapeido.Location = new System.Drawing.Point(100, 155);
-            this.Boxapeido.Multiline = true;
-            this.Boxapeido.Name = "Boxapeido";
-            this.Boxapeido.Size = new System.Drawing.Size(222, 24);
-            this.Boxapeido.TabIndex = 12;
+            this.boxApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.boxApellido.Location = new System.Drawing.Point(100, 155);
+            this.boxApellido.Multiline = true;
+            this.boxApellido.Name = "boxApellido";
+            this.boxApellido.Size = new System.Drawing.Size(222, 24);
+            this.boxApellido.TabIndex = 12;
             // 
-            // Boxemail
+            // boxEmail
             // 
-            this.Boxemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boxemail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.Boxemail.Location = new System.Drawing.Point(100, 200);
-            this.Boxemail.Multiline = true;
-            this.Boxemail.Name = "Boxemail";
-            this.Boxemail.Size = new System.Drawing.Size(222, 24);
-            this.Boxemail.TabIndex = 13;
+            this.boxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.boxEmail.Location = new System.Drawing.Point(100, 200);
+            this.boxEmail.Multiline = true;
+            this.boxEmail.Name = "boxEmail";
+            this.boxEmail.Size = new System.Drawing.Size(222, 24);
+            this.boxEmail.TabIndex = 13;
             // 
-            // Boxdirec
+            // boxDirec
             // 
-            this.Boxdirec.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Boxdirec.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.Boxdirec.Location = new System.Drawing.Point(100, 244);
-            this.Boxdirec.Multiline = true;
-            this.Boxdirec.Name = "Boxdirec";
-            this.Boxdirec.Size = new System.Drawing.Size(222, 24);
-            this.Boxdirec.TabIndex = 14;
+            this.boxDirec.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxDirec.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.boxDirec.Location = new System.Drawing.Point(100, 244);
+            this.boxDirec.Multiline = true;
+            this.boxDirec.Name = "boxDirec";
+            this.boxDirec.Size = new System.Drawing.Size(222, 24);
+            this.boxDirec.TabIndex = 14;
             // 
             // btncCls
             // 
@@ -207,6 +207,7 @@
             // btnAgregaClt
             // 
             this.btnAgregaClt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.btnAgregaClt.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnAgregaClt.FlatAppearance.BorderSize = 0;
             this.btnAgregaClt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
             this.btnAgregaClt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -223,25 +224,27 @@
             // 
             // FormularioClientes
             // 
+            this.AcceptButton = this.btnAgregaClt;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(334, 368);
             this.Controls.Add(this.btnAgregaClt);
             this.Controls.Add(this.btncCls);
-            this.Controls.Add(this.Boxdirec);
-            this.Controls.Add(this.Boxemail);
-            this.Controls.Add(this.Boxapeido);
+            this.Controls.Add(this.boxDirec);
+            this.Controls.Add(this.boxEmail);
+            this.Controls.Add(this.boxApellido);
             this.Controls.Add(this.boxNom);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.boxid);
+            this.Controls.Add(this.boxID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BarraTit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormularioClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioClientes";
             this.BarraTit.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
@@ -257,15 +260,15 @@
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox boxid;
+        private System.Windows.Forms.TextBox boxID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox boxNom;
-        private System.Windows.Forms.TextBox Boxapeido;
-        private System.Windows.Forms.TextBox Boxemail;
-        private System.Windows.Forms.TextBox Boxdirec;
+        private System.Windows.Forms.TextBox boxApellido;
+        private System.Windows.Forms.TextBox boxEmail;
+        private System.Windows.Forms.TextBox boxDirec;
         private System.Windows.Forms.Button btncCls;
         private System.Windows.Forms.Button btnAgregaClt;
     }

@@ -104,3 +104,4 @@ D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\i
 D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\Pinturas Perfecta.exe
 D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\Pinturas Perfecta.pdb
 D:\Documentos\Github Local\pinturas_perfecta\inventarios\inventarios\obj\Debug\inventarios.EditarForm.resources
+C:\Users\Uriel\Desktop\pinturas_perfecta\inventarios\inventarios\obj\Debug\inventarios.EditarForm.resources

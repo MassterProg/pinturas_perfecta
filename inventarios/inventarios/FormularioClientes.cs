@@ -14,9 +14,22 @@ namespace inventarios
 {
     public partial class FormularioClientes : Form
     {
+        private Mediador mediador;
+
+        public Mediador GetMediador()
+        {
+            return this.mediador;
+        }
+
+        public void setMediador(Mediador _mediador)
+        {
+            this.mediador = _mediador;
+        }
+
         public FormularioClientes()
         {
             InitializeComponent();
+            mediador = new Mediador();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -37,44 +50,20 @@ namespace inventarios
 
         private void btnAgregaClt_Click(object sender, EventArgs e)
         {
-
-            
-            String id = boxid.Text;
-            String nom = boxNom.Text;
-            String apeido = Boxapeido.Text;
-            String email = Boxemail.Text;
-            String dir = Boxdirec.Text;
-
-            String consulta = "INSERT INTO clientes (idCliente, Nombre, Apellido, Email, Direccion) VALUES ('" + id + "','" + nom + "', '" + apeido + "', '" + email + "', '" + dir + "')";
-
-            MySqlConnection conexionBD = Conexion.verificarBD();
-            conexionBD.Open();
-
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Registro guardado");
-                limpiar();
-            }
-            catch(MySqlException ex)
-            {
-                MessageBox.Show("Error al guardar" + ex.Message);
-            }
-            finally
-            {
-                conexionBD.Close();
-            }
-
+            mediador.setId(boxID.Text);
+            mediador.setNombre(boxNom.Text);
+            mediador.setApellido(boxApellido.Text);
+            mediador.setEmail(boxEmail.Text);
+            mediador.setDireccion (boxDirec.Text);
         }
 
         private void limpiar()
         {
-            boxid.Text = "";
+            boxID.Text = "";
             boxNom.Text = "";
-            Boxapeido.Text = "";
-            Boxemail.Text = "";
-            Boxdirec.Text = "";
+            boxApellido.Text = "";
+            boxEmail.Text = "";
+            boxDirec.Text = "";
         }
 
         private void btncCls_Click(object sender, EventArgs e)

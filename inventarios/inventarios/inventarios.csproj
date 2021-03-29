@@ -106,6 +106,7 @@
     <Compile Include="FormularioClientes.Designer.cs">
       <DependentUpon>FormularioClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mediador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Clientes.resx">
