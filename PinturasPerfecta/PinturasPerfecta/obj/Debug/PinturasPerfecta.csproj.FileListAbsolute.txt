@@ -1,0 +1,32 @@
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.csprojAssemblyReference.cache
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Form1.resources
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Properties.Resources.resources
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.csproj.GenerateResource.cache
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.csproj.CoreCompileInputs.cache
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.csproj.CopyComplete
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Clientes.resources
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\bin\Debug\Pinturas Perfecta.exe.config
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\bin\Debug\Pinturas Perfecta.exe
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\bin\Debug\Pinturas Perfecta.pdb
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\bin\Debug\MySql.Data.dll
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\bin\Debug\Google.Protobuf.dll
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\bin\Debug\Zstandard.Net.dll
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\bin\Debug\Renci.SshNet.dll
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\bin\Debug\System.Memory.dll
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\bin\Debug\System.Buffers.dll
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\bin\Debug\MySql.Data.xml
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.exe.config
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.exe
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.pdb
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Ventas.resources
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Productos.resources
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Compras.resources
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.FormularioClientes.resources
+C:\Users\Uriel\source\repos\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.ClientesModificar.resources
