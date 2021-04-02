@@ -262,14 +262,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox boxID;
-        private System.Windows.Forms.TextBox boxNombre;
-        private System.Windows.Forms.TextBox boxApellido;
-        private System.Windows.Forms.TextBox boxEmail;
-        private System.Windows.Forms.TextBox boxDireccion;
-        private FontAwesome.Sharp.IconButton buttonAgregar;
         private FontAwesome.Sharp.IconButton buttonLimpar;
         private FontAwesome.Sharp.IconButton buttonClose;
-        private System.Windows.Forms.Panel panelNav;
+        public System.Windows.Forms.TextBox boxID;
+        public System.Windows.Forms.TextBox boxNombre;
+        public System.Windows.Forms.TextBox boxApellido;
+        public System.Windows.Forms.TextBox boxEmail;
+        public System.Windows.Forms.TextBox boxDireccion;
+        public FontAwesome.Sharp.IconButton buttonAgregar;
+        public System.Windows.Forms.Panel panelNav;
     }
 }
