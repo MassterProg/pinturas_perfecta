@@ -30,7 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.LabelFecha = new System.Windows.Forms.Label();
             this.ButtonVentas = new FontAwesome.Sharp.IconButton();
+            this.labelTiempo = new System.Windows.Forms.Label();
             this.ButtonCompras = new FontAwesome.Sharp.IconButton();
             this.ButtonProductos = new FontAwesome.Sharp.IconButton();
             this.ButtonClientes = new FontAwesome.Sharp.IconButton();
@@ -43,10 +45,8 @@
             this.currentPositionLabel = new System.Windows.Forms.Label();
             this.HomeIcon = new FontAwesome.Sharp.IconPictureBox();
             this.PanelDeEscritorio = new System.Windows.Forms.Panel();
-            this.labelTiempo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.HoraFecha = new System.Windows.Forms.Timer(this.components);
-            this.LabelFecha = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonHome)).BeginInit();
@@ -73,6 +73,20 @@
             this.panelMenu.Size = new System.Drawing.Size(221, 596);
             this.panelMenu.TabIndex = 0;
             // 
+            // LabelFecha
+            // 
+            this.LabelFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LabelFecha.AutoSize = true;
+            this.LabelFecha.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelFecha.ForeColor = System.Drawing.Color.White;
+            this.LabelFecha.Location = new System.Drawing.Point(84, 566);
+            this.LabelFecha.Name = "LabelFecha";
+            this.LabelFecha.Size = new System.Drawing.Size(42, 16);
+            this.LabelFecha.TabIndex = 10;
+            this.LabelFecha.Text = "Fecha";
+            this.LabelFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LabelFecha.Visible = false;
+            // 
             // ButtonVentas
             // 
             this.ButtonVentas.Dock = System.Windows.Forms.DockStyle.Top;
@@ -93,6 +107,19 @@
             this.ButtonVentas.Text = "Ventas";
             this.ButtonVentas.UseVisualStyleBackColor = true;
             this.ButtonVentas.Click += new System.EventHandler(this.ButtonVentas_Click);
+            // 
+            // labelTiempo
+            // 
+            this.labelTiempo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelTiempo.AutoSize = true;
+            this.labelTiempo.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTiempo.ForeColor = System.Drawing.Color.White;
+            this.labelTiempo.Location = new System.Drawing.Point(8, 566);
+            this.labelTiempo.Name = "labelTiempo";
+            this.labelTiempo.Size = new System.Drawing.Size(70, 21);
+            this.labelTiempo.TabIndex = 2;
+            this.labelTiempo.Text = "2:09:26";
+            this.labelTiempo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ButtonCompras
             // 
@@ -280,19 +307,6 @@
             this.PanelDeEscritorio.Size = new System.Drawing.Size(986, 552);
             this.PanelDeEscritorio.TabIndex = 2;
             // 
-            // labelTiempo
-            // 
-            this.labelTiempo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelTiempo.AutoSize = true;
-            this.labelTiempo.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTiempo.ForeColor = System.Drawing.Color.White;
-            this.labelTiempo.Location = new System.Drawing.Point(8, 566);
-            this.labelTiempo.Name = "labelTiempo";
-            this.labelTiempo.Size = new System.Drawing.Size(70, 21);
-            this.labelTiempo.TabIndex = 2;
-            this.labelTiempo.Text = "2:09:26";
-            this.labelTiempo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -308,20 +322,6 @@
             // 
             this.HoraFecha.Enabled = true;
             this.HoraFecha.Tick += new System.EventHandler(this.HoraFecha_Tick);
-            // 
-            // LabelFecha
-            // 
-            this.LabelFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LabelFecha.AutoSize = true;
-            this.LabelFecha.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelFecha.ForeColor = System.Drawing.Color.White;
-            this.LabelFecha.Location = new System.Drawing.Point(84, 566);
-            this.LabelFecha.Name = "LabelFecha";
-            this.LabelFecha.Size = new System.Drawing.Size(42, 16);
-            this.LabelFecha.TabIndex = 10;
-            this.LabelFecha.Text = "Fecha";
-            this.LabelFecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.LabelFecha.Visible = false;
             // 
             // Form1
             // 

@@ -132,6 +132,7 @@ namespace PinturasPerfecta
                 {
                     //estamos obteniendo la informacion de un datagrid de este formulario(clientes) para ponerlo en un nuevo formulario llamado editar
                     frm.boxID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                    frm.boxID.Enabled = false;
                     frm.boxNombre.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                     frm.boxApellido.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
                     frm.boxEmail.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
@@ -139,14 +140,13 @@ namespace PinturasPerfecta
                     frm.buttonAgregar.Text = "Modificar";
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
-
-                        /*String id = frm.GetMediador().getId();
+                        String id = frm.GetMediador().getId();
                         String nom = frm.GetMediador().getNombre();
                         String apeido = frm.GetMediador().getApellido();
                         String email = frm.GetMediador().getEmail();
                         String dir = frm.GetMediador().getDireccion();
 
-                        String consulta = "INSERT INTO clientes (idCliente, Nombre, Apellido, Email, Direccion) VALUES ('" + id + "','" + nom + "', '" + apeido + "', '" + email + "', '" + dir + "')";
+                        String consulta = "UPDATE clientes SET Nombre='" + nom + "', Apellido='" + apeido + "', Email='" + email + "', Direccion='" + dir + "' WHERE idCliente='" + id + "'";
 
                         MySqlConnection conexionBD = Conexion.verificarBD();
                         conexionBD.Open();
@@ -155,19 +155,19 @@ namespace PinturasPerfecta
                         {
                             MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Registro guardado");
+                            MessageBox.Show("Actualización con exito");
                             //limpiar();
                         }
                         catch (MySqlException ex)
                         {
-                            MessageBox.Show("Error al guardar" + ex.Message);
+                            MessageBox.Show("Error al actualizar " + ex.Message);
                         }
                         finally
                         {
                             conexionBD.Close();
                         }
 
-                        DisplayData();*/
+                        DisplayData();
                     }
                 }
                 else

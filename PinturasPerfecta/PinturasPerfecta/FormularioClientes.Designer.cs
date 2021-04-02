@@ -256,8 +256,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -271,5 +269,6 @@
         public System.Windows.Forms.TextBox boxDireccion;
         public FontAwesome.Sharp.IconButton buttonAgregar;
         public System.Windows.Forms.Panel panelNav;
+        public System.Windows.Forms.Label label1;
     }
 }

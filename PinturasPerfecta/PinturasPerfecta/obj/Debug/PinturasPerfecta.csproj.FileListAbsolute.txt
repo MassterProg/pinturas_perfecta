@@ -95,3 +95,36 @@ C:\Users\Uriel\Desktop\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfe
 C:\Users\Uriel\Desktop\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.csproj.CopyComplete
 C:\Users\Uriel\Desktop\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.exe
 C:\Users\Uriel\Desktop\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.pdb
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\Pinturas Perfecta.exe.config
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\Pinturas Perfecta.exe
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\Pinturas Perfecta.pdb
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\FontAwesome.Sharp.dll
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\MySql.Data.dll
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\Google.Protobuf.dll
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\Zstandard.Net.dll
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\BouncyCastle.Crypto.dll
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\Ubiety.Dns.Core.dll
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\Renci.SshNet.dll
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\System.Memory.dll
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\System.Buffers.dll
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\K4os.Compression.LZ4.dll
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\K4os.Hash.xxHash.dll
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\System.Numerics.Vectors.dll
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\MySql.Data.xml
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.csprojAssemblyReference.cache
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.exe.config
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Clientes.resources
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.ClientesModificar.resources
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Compras.resources
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Form1.resources
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.FormularioClientes.resources
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Productos.resources
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Properties.Resources.resources
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Ventas.resources
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.csproj.GenerateResource.cache
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.csproj.CoreCompileInputs.cache
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.csproj.CopyComplete
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.exe
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.pdb
