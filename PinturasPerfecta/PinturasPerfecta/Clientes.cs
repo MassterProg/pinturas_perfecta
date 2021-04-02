@@ -84,38 +84,44 @@ namespace PinturasPerfecta
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-
-                MessageBox.Show("Seguro que quieres eliminar el registro");
-                String id = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-
-
-                String consulta = "DELETE FROM clientes WHERE idCliente = '" + id + "' ";
-
-                MySqlConnection conexionBD = Conexion.verificarBD();
-                conexionBD.Open();
-
-                try
+                DialogResult dial = MessageBox.Show("¿Seguro que quieres eliminar este registro?",
+                    "Advertencia", MessageBoxButtons.YesNo);
+                if (dial == DialogResult.Yes)
                 {
-                    MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Registro borrado correctamente");
+                    String id = dataGridView1.CurrentRow.Cells[0].Value.ToString();
 
+                    String consulta = "DELETE FROM clientes WHERE idCliente = '" + id + "' ";
+
+                    MySqlConnection conexionBD = Conexion.verificarBD();
+                    conexionBD.Open();
+
+                    try
+                    {
+                        MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Registro borrado correctamente");
+
+
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show("Error al borrar" + ex.Message);
+                    }
+                    finally
+                    {
+                        conexionBD.Close();
+
+                    }
 
                 }
-                catch (MySqlException ex)
+                else if (dial == DialogResult.No)
                 {
-                    MessageBox.Show("Error al borrar" + ex.Message);
+                    //se cierra el cuadro de dialogo
                 }
-                finally
-                {
-                    conexionBD.Close();
 
-                }
             }
             else
                 MessageBox.Show("Debe seleccionar toda una fila");
-
-            DisplayData();
         }
     }
 }
