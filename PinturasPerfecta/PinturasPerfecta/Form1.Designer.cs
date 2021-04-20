@@ -116,9 +116,8 @@
             this.labelTiempo.ForeColor = System.Drawing.Color.White;
             this.labelTiempo.Location = new System.Drawing.Point(8, 566);
             this.labelTiempo.Name = "labelTiempo";
-            this.labelTiempo.Size = new System.Drawing.Size(70, 21);
+            this.labelTiempo.Size = new System.Drawing.Size(0, 21);
             this.labelTiempo.TabIndex = 2;
-            this.labelTiempo.Text = "2:09:26";
             this.labelTiempo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ButtonCompras

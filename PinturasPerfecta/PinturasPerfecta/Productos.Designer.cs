@@ -34,10 +34,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.buttonModificar = new FontAwesome.Sharp.IconButton();
             this.buttonElimnar = new FontAwesome.Sharp.IconButton();
             this.buttonAgregar = new FontAwesome.Sharp.IconButton();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -102,14 +102,6 @@
             this.panel1.Size = new System.Drawing.Size(204, 450);
             this.panel1.TabIndex = 6;
             // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(204, 43);
-            this.panel3.TabIndex = 0;
-            // 
             // buttonModificar
             // 
             this.buttonModificar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -169,6 +161,15 @@
             this.buttonAgregar.TabIndex = 2;
             this.buttonAgregar.Text = "Agregar";
             this.buttonAgregar.UseVisualStyleBackColor = true;
+            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(204, 43);
+            this.panel3.TabIndex = 0;
             // 
             // Productos
             // 

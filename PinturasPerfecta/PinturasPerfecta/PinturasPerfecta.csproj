@@ -62,12 +62,6 @@
     <Compile Include="Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientesModificar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ClientesModificar.Designer.cs">
-      <DependentUpon>ClientesModificar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Compras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,14 +75,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormularioClientes.cs">
+    <Compile Include="FormClientescs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormularioClientes.Designer.cs">
-      <DependentUpon>FormularioClientes.cs</DependentUpon>
+    <Compile Include="FormClientescs.Designer.cs">
+      <DependentUpon>FormClientescs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mediador.cs" />
-    <Compile Include="MediadorClientes.cs" />
+    <Compile Include="FormularioProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioProductos.Designer.cs">
+      <DependentUpon>FormularioProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageOK.Designer.cs">
+      <DependentUpon>MessageOK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,17 +110,20 @@
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientesModificar.resx">
-      <DependentUpon>ClientesModificar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Compras.resx">
       <DependentUpon>Compras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormularioClientes.resx">
-      <DependentUpon>FormularioClientes.cs</DependentUpon>
+    <EmbeddedResource Include="FormClientescs.resx">
+      <DependentUpon>FormClientescs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioProductos.resx">
+      <DependentUpon>FormularioProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageOK.resx">
+      <DependentUpon>MessageOK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos.resx">
       <DependentUpon>Productos.cs</DependentUpon>

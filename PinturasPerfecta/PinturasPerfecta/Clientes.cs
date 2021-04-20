@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using FontAwesome.Sharp;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,46 +38,40 @@ namespace PinturasPerfecta
 
             adapt.Dispose();
             conexionBD.Close();
-
-
         }
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
-            
-            using (FormularioClientes frm = new FormularioClientes() { })
+            FormClientescs frm = new FormClientescs();
+            if (frm.ShowDialog() == DialogResult.Cancel && frm.entrada)
             {
-                if (frm.ShowDialog() == DialogResult.OK)
+                String id = frm.boxID.Text;
+                String nom = frm.boxNombre.Text;
+                String apeido = frm.boxApellido.Text;
+                String email = frm.boxEmail.Text;
+                String dir = frm.boxDireccion.Text;
+
+                String consulta = "INSERT INTO clientes (idCliente, Nombre, Apellido, Email, Direccion) VALUES ('" + id + "','" + nom + "', '" + apeido + "', '" + email + "', '" + dir + "')";
+
+                MySqlConnection conexionBD = Conexion.verificarBD();
+                conexionBD.Open();
+
+                try
                 {
-
-                    String id = frm.GetMediador().getId();
-                    String nom = frm.GetMediador().getNombre();
-                    String apeido = frm.GetMediador().getApellido();
-                    String email = frm.GetMediador().getEmail();
-                    String dir = frm.GetMediador().getDireccion();
-
-                    String consulta = "INSERT INTO clientes (idCliente, Nombre, Apellido, Email, Direccion) VALUES ('" + id + "','" + nom + "', '" + apeido + "', '" + email + "', '" + dir + "')";
-
-                    MySqlConnection conexionBD = Conexion.verificarBD();
-                    conexionBD.Open();
-
-                    try
-                    {
-                        MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Registro guardado");
-                        //limpiar();
-                    }
-                    catch (MySqlException ex)
-                    {
-                        MessageBox.Show("Error al guardar" + ex.Message);
-                    }
-                    finally
-                    {
-                        conexionBD.Close();
-                    }
-
-                    DisplayData();
+                    MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
+                    cmd.ExecuteNonQuery();
+                    MessageSuccess("Registro guardado");
+                    //limpiar();
                 }
+                catch (MySqlException ex)
+                {
+                    MessageError("Hubo un error al guardar.");
+                }
+                finally
+                {
+                    conexionBD.Close();
+                }
+
+                DisplayData();
             }
         }
 
@@ -94,25 +89,25 @@ namespace PinturasPerfecta
 
                     MySqlConnection conexionBD = Conexion.verificarBD();
                     conexionBD.Open();
-
+                    
                     try
                     {
                         MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("Registro borrado correctamente");
-
+                        MessageSuccess("El registro se ha borrado exitosamente.");
+                        
 
                     }
                     catch (MySqlException ex)
                     {
-                        MessageBox.Show("Error al borrar" + ex.Message);
+                        MessageError("Error al borrar");
                     }
                     finally
                     {
                         conexionBD.Close();
 
                     }
-
+                    DisplayData();
                 }
                 else if (dial == DialogResult.No)
                 {
@@ -121,60 +116,72 @@ namespace PinturasPerfecta
 
             }
             else
-                MessageBox.Show("Debe seleccionar toda una fila");
+                MessageError("Se debe seleccionar toda una fila.");
         }
 
         private void buttonModificar_Click(object sender, EventArgs e)
         {
-            using (FormularioClientes frm = new FormularioClientes() { })
+            FormClientescs frm = new FormClientescs();
+            if (dataGridView1.SelectedRows.Count > 0)
             {
-                if (dataGridView1.SelectedRows.Count > 0)
+                frm.boxID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                frm.boxID.Enabled = false;
+                frm.boxNombre.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                frm.boxApellido.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                frm.boxEmail.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                frm.boxDireccion.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                frm.buttonAgregar.Text = "Modificar";
+                if (frm.ShowDialog() == DialogResult.Cancel && frm.entrada)
                 {
-                    //estamos obteniendo la informacion de un datagrid de este formulario(clientes) para ponerlo en un nuevo formulario llamado editar
-                    frm.boxID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                    frm.boxID.Enabled = false;
-                    frm.boxNombre.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    frm.boxApellido.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    frm.boxEmail.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    frm.boxDireccion.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    frm.buttonAgregar.Text = "Modificar";
-                    if (frm.ShowDialog() == DialogResult.OK)
+                    String id = frm.boxID.Text;
+                    String nom = frm.boxNombre.Text;
+                    String apeido = frm.boxApellido.Text;
+                    String email = frm.boxEmail.Text;
+                    String dir = frm.boxDireccion.Text;
+
+                    String consulta = "UPDATE clientes SET Nombre='" + nom + "', Apellido='" + apeido + "', Email='" + email + "', Direccion='" + dir + "' WHERE idCliente='" + id + "'";
+
+                    MySqlConnection conexionBD = Conexion.verificarBD();
+                    conexionBD.Open();
+
+                    try
                     {
-                        String id = frm.GetMediador().getId();
-                        String nom = frm.GetMediador().getNombre();
-                        String apeido = frm.GetMediador().getApellido();
-                        String email = frm.GetMediador().getEmail();
-                        String dir = frm.GetMediador().getDireccion();
-
-                        String consulta = "UPDATE clientes SET Nombre='" + nom + "', Apellido='" + apeido + "', Email='" + email + "', Direccion='" + dir + "' WHERE idCliente='" + id + "'";
-
-                        MySqlConnection conexionBD = Conexion.verificarBD();
-                        conexionBD.Open();
-
-                        try
-                        {
-                            MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("Actualización con exito");
-                            //limpiar();
-                        }
-                        catch (MySqlException ex)
-                        {
-                            MessageBox.Show("Error al actualizar " + ex.Message);
-                        }
-                        finally
-                        {
-                            conexionBD.Close();
-                        }
-
-                        DisplayData();
+                        MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
+                        cmd.ExecuteNonQuery();
+                        MessageSuccess("Actualización con éxito.");
+                        //limpiar();
                     }
+                    catch (MySqlException ex)
+                    {
+                        MessageError("Hubo un error al realizar la actualización.");
+                    }
+                    finally
+                    {
+                        conexionBD.Close();
+                    }
+
+                    DisplayData();
                 }
-                else
-                    MessageBox.Show("Debe seleccionar toda una fila");
-
-
             }
+        }
+
+        public void MessageSuccess(string mensaje)
+        {
+            MessageOK frm = new MessageOK();
+            frm.iconPictureBox1.IconChar = IconChar.CheckSquare;
+            frm.label1.Text = mensaje;
+
+            frm.ShowDialog();
+        }
+
+        public void MessageError(string mensaje)
+        {
+            MessageOK frm = new MessageOK();
+            frm.iconPictureBox1.IconChar = IconChar.ExclamationTriangle;
+            frm.iconPictureBox1.IconColor = Color.FromArgb(255, 128, 128);
+            frm.label1.Text = mensaje;
+
+            frm.ShowDialog();
         }
     }
 }
