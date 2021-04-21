@@ -34,22 +34,22 @@ namespace PinturasPerfecta
             
             if (!NumeroEntero.IsMatch(boxID.Text))
             {
-                MessageError("Id o clave no valida");
+                MessageError("El formato del ID no es valido.");
                 //MessageBox.Show("Id o clave no valida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 boxID.Text = "";
             }else if (!ValidarNombre.IsMatch(boxNombre.Text))
             {
-                MessageError("El nombre no tiene el formato adecuado"); 
+                MessageError("El nombre no tiene el formato adecuado."); 
                 //MessageBox.Show("El nombre no tiene el formato adecuado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 boxNombre.Text = "";
             }else if (!ValidarNombre.IsMatch(boxApellido.Text))
             {
-                MessageError("El apellido no tiene el formato adecuado");
+                MessageError("El apellido no tiene el formato adecuado.");
                 //MessageBox.Show("El apellido no tiene el formato adecuado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 boxApellido.Text = "";
             }else if (!ValidarEmail.IsMatch(boxEmail.Text))
             {
-                MessageError("El email no tiene el formato adecuado");
+                MessageError("El email no tiene el formato adecuado.");
                 //MessageBox.Show("El email no tiene el formato adecuado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 boxEmail.Text = "";
             }

@@ -31,20 +31,31 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonCargar = new FontAwesome.Sharp.IconButton();
             this.buttonModificar = new FontAwesome.Sharp.IconButton();
             this.buttonElimnar = new FontAwesome.Sharp.IconButton();
             this.buttonAgregar = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 428);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1000, 22);
+            this.panel2.TabIndex = 1;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
+            this.panel1.Controls.Add(this.buttonCargar);
             this.panel1.Controls.Add(this.buttonModificar);
             this.panel1.Controls.Add(this.buttonElimnar);
             this.panel1.Controls.Add(this.buttonAgregar);
@@ -52,8 +63,29 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(796, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(204, 450);
-            this.panel1.TabIndex = 0;
+            this.panel1.Size = new System.Drawing.Size(204, 428);
+            this.panel1.TabIndex = 3;
+            // 
+            // buttonCargar
+            // 
+            this.buttonCargar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonCargar.FlatAppearance.BorderSize = 0;
+            this.buttonCargar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
+            this.buttonCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCargar.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCargar.ForeColor = System.Drawing.Color.White;
+            this.buttonCargar.IconChar = FontAwesome.Sharp.IconChar.Upload;
+            this.buttonCargar.IconColor = System.Drawing.Color.White;
+            this.buttonCargar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonCargar.IconSize = 40;
+            this.buttonCargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCargar.Location = new System.Drawing.Point(0, 368);
+            this.buttonCargar.Name = "buttonCargar";
+            this.buttonCargar.Size = new System.Drawing.Size(204, 60);
+            this.buttonCargar.TabIndex = 5;
+            this.buttonCargar.Text = "Cargar";
+            this.buttonCargar.UseVisualStyleBackColor = true;
+            this.buttonCargar.Click += new System.EventHandler(this.buttonCargar_Click);
             // 
             // buttonModificar
             // 
@@ -126,15 +158,6 @@
             this.panel3.Size = new System.Drawing.Size(204, 43);
             this.panel3.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 428);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(796, 22);
-            this.panel2.TabIndex = 1;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(79)))));
@@ -171,7 +194,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(796, 428);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.TabIndex = 4;
             // 
             // Clientes
             // 
@@ -180,8 +203,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(79)))));
             this.ClientSize = new System.Drawing.Size(1000, 450);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Name = "Clientes";
             this.Text = "Clientes";
             this.panel1.ResumeLayout(false);
@@ -191,13 +214,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel1;
+        private FontAwesome.Sharp.IconButton buttonCargar;
+        private FontAwesome.Sharp.IconButton buttonModificar;
+        private FontAwesome.Sharp.IconButton buttonElimnar;
         private FontAwesome.Sharp.IconButton buttonAgregar;
         private System.Windows.Forms.Panel panel3;
-        private FontAwesome.Sharp.IconButton buttonElimnar;
-        private FontAwesome.Sharp.IconButton buttonModificar;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

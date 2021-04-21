@@ -24,10 +24,10 @@ namespace PinturasPerfecta
         public void DisplayData()//Junta los fragmentos y los muestra en el datagrid
         {
             MySqlConnection conexionBD = Conexion.verificarBD();
-            
+
             conexionBD.Open();
             DataTable dt = new DataTable();
-            adapt = new MySqlDataAdapter("select * from clientes", conexionBD);
+            adapt = new MySqlDataAdapter("select * from clientes;", conexionBD);
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.RowTemplate.Height = 30;
@@ -59,12 +59,12 @@ namespace PinturasPerfecta
                 {
                     MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
                     cmd.ExecuteNonQuery();
-                    MessageSuccess("Registro guardado");
+                    MessageSuccess("El registro ha sido guarado exitosamente.");
                     //limpiar();
                 }
                 catch (MySqlException ex)
                 {
-                    MessageError("Hubo un error al guardar.");
+                    MessageError("Hubo un error al guardar el registro.");
                 }
                 finally
                 {
@@ -79,12 +79,11 @@ namespace PinturasPerfecta
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                DialogResult dial = MessageBox.Show("¿Seguro que quieres eliminar este registro?",
-                    "Advertencia", MessageBoxButtons.YesNo);
-                if (dial == DialogResult.Yes)
-                {
-                    String id = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-
+                
+                String id = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                Boolean respuesta= MessageQuestion("¿Seguro que quieres eliminar el registro "+id+"?");
+                if (respuesta)
+                {                    
                     String consulta = "DELETE FROM clientes WHERE idCliente = '" + id + "' ";
 
                     MySqlConnection conexionBD = Conexion.verificarBD();
@@ -94,7 +93,7 @@ namespace PinturasPerfecta
                     {
                         MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
                         cmd.ExecuteNonQuery();
-                        MessageSuccess("El registro se ha borrado exitosamente.");
+                        MessageSuccess("El registro se ha sido borrado exitosamente.");
                         
 
                     }
@@ -108,10 +107,6 @@ namespace PinturasPerfecta
 
                     }
                     DisplayData();
-                }
-                else if (dial == DialogResult.No)
-                {
-                    //se cierra el cuadro de dialogo
                 }
 
             }
@@ -148,7 +143,7 @@ namespace PinturasPerfecta
                     {
                         MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
                         cmd.ExecuteNonQuery();
-                        MessageSuccess("Actualización con éxito.");
+                        MessageSuccess("La actualización se ha realizado con éxito.");
                         //limpiar();
                     }
                     catch (MySqlException ex)
@@ -182,6 +177,32 @@ namespace PinturasPerfecta
             frm.label1.Text = mensaje;
 
             frm.ShowDialog();
+        }
+        public Boolean MessageQuestion(string mensaje)
+        {
+            Boolean respuesta=true;
+            MessageOK frm = new MessageOK();
+            frm.button1.Text = "Sí";
+            frm.button2.Visible = true;
+            frm.label1.Text = mensaje;
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                respuesta = true;
+            }
+            else
+            {
+                respuesta = false;
+            }
+
+            return respuesta;
+        }
+
+        private void buttonCargar_Click(object sender, EventArgs e)
+        {
+            PantallaCarga frm = new PantallaCarga();
+            frm.labelNombreTabala.Text = "Clientes";
+            if(frm.ShowDialog() == DialogResult.OK) DisplayData();
         }
     }
 }

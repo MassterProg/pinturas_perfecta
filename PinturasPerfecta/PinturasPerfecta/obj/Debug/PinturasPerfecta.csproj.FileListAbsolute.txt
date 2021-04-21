@@ -161,3 +161,4 @@ C:\Users\Uriel\Desktop\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\D
 C:\Users\Uriel\Desktop\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.FormularioProductos.resources
 C:\Users\Uriel\Desktop\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.FormClientescs.resources
 C:\Users\Uriel\Desktop\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.MessageOK.resources
+C:\Users\Uriel\Desktop\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.PantallaCarga.resources

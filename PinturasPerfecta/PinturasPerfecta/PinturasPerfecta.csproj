@@ -87,11 +87,18 @@
     <Compile Include="FormularioProductos.Designer.cs">
       <DependentUpon>FormularioProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="matrices.cs" />
     <Compile Include="MessageOK.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MessageOK.Designer.cs">
       <DependentUpon>MessageOK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaCarga.Designer.cs">
+      <DependentUpon>PantallaCarga.cs</DependentUpon>
     </Compile>
     <Compile Include="Productos.cs">
       <SubType>Form</SubType>
@@ -124,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MessageOK.resx">
       <DependentUpon>MessageOK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaCarga.resx">
+      <DependentUpon>PantallaCarga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos.resx">
       <DependentUpon>Productos.cs</DependentUpon>

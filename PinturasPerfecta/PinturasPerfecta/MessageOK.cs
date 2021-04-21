@@ -39,7 +39,7 @@ namespace PinturasPerfecta
         }
         private void buttonAgregar_MouseLeave(object sender, EventArgs e)
         {
-            if (((Button)sender).Text == "Ok")
+            if (((Button)sender).Text == "Ok" || ((Button)sender).Text == "Sí")
             {
                 ((Button)sender).ForeColor = Color.Cyan;
             }

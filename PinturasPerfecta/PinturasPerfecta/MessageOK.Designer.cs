@@ -96,17 +96,18 @@
             // 
             // button2
             // 
+            this.button2.AutoSize = true;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button2.FlatAppearance.BorderSize = 2;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button2.Location = new System.Drawing.Point(249, 116);
+            this.button2.Location = new System.Drawing.Point(289, 116);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 34);
+            this.button2.Size = new System.Drawing.Size(52, 36);
             this.button2.TabIndex = 32;
-            this.button2.Text = "Cancel";
+            this.button2.Text = "No";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -155,6 +156,7 @@
             this.panelNav.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
