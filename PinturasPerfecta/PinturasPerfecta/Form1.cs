@@ -9,9 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using MySql.Data.MySqlClient;
 
 namespace PinturasPerfecta
-{
+{    
     public partial class Form1 : Form
     {
         private IconButton currentButton;
@@ -30,6 +31,8 @@ namespace PinturasPerfecta
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            panel4.Visible = false;
         }
 
         private void BotonActivo(object senderBtn, Color color)
@@ -77,29 +80,34 @@ namespace PinturasPerfecta
         {
             BotonActivo(sender, Color.FromArgb(231, 76, 60));
             AbrirFormulario(new Clientes());
+            panel4.Visible = true;
         }
 
         private void ButtonProductos_Click(object sender, EventArgs e)
         {
             BotonActivo(sender, Color.FromArgb(230, 126, 34));
             AbrirFormulario(new Productos());
+            panel4.Visible = true;
         }
 
         private void ButtonCompras_Click(object sender, EventArgs e)
         {
             BotonActivo(sender, Color.FromArgb(165, 105, 189));
             AbrirFormulario(new Compras());
+            panel4.Visible = true;
         }
 
         private void ButtonVentas_Click(object sender, EventArgs e)
         {
             BotonActivo(sender, Color.FromArgb(93, 173, 226));
             AbrirFormulario(new Ventas());
+            panel4.Visible = true;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Reset();
+            panel4.Visible = false;
         }
         
         private void Reset()

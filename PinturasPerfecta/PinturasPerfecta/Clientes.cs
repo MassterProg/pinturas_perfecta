@@ -16,10 +16,12 @@ namespace PinturasPerfecta
     {
         
         MySqlDataAdapter adapt;
+        bool firstTime = true;
         public Clientes()
         {
             InitializeComponent();
             DisplayData();
+            firstTime = false;
         }
         public void DisplayData()//Junta los fragmentos y los muestra en el datagrid
         {
@@ -28,15 +30,26 @@ namespace PinturasPerfecta
             conexionBD.Open();
             DataTable dt = new DataTable();
             adapt = new MySqlDataAdapter("select * from clientes;", conexionBD);
+            if (firstTime)
+            {
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.RowTemplate.Height = 30;
+                dataGridView1.AllowUserToAddRows = false;
 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.RowTemplate.Height = 30;
-            dataGridView1.AllowUserToAddRows = false;
+                DataGridViewCheckBoxColumn dataCheck = new DataGridViewCheckBoxColumn();
+                dataCheck.HeaderText = "";
+                dataCheck.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataCheck.Name = "checkbox";
+                
+                dataGridView1.RowHeadersVisible = false;
+                dataGridView1.Columns.Insert(0, dataCheck);
+            }
+            
 
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;
 
-            adapt.Dispose();
+            //adapt.Dispose();
             conexionBD.Close();
         }
         private void buttonAgregar_Click(object sender, EventArgs e)
@@ -77,29 +90,48 @@ namespace PinturasPerfecta
 
         private void buttonElimnar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            int contador = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)//Se crea un ciclo que saca la cantidad de checkbox seleccionados
             {
-                
-                String id = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                Boolean respuesta= MessageQuestion("¿Seguro que quieres eliminar el registro "+id+"?");
-                if (respuesta)
-                {                    
+                Boolean seleccion = Convert.ToBoolean(row.Cells["checkbox"].Value);
+                if (seleccion)
+                {
+                    contador++;
+                }
+            }
+            if (contador != 0)
+            {
+                string[] ids = new string[contador];
+                contador = 0;
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    Boolean seleccion = Convert.ToBoolean(row.Cells["checkbox"].Value);
+                    if (seleccion)
+                    {
+                        ids[contador] = Convert.ToString(row.Cells["idCliente"].Value);
+                        contador++;
+                    }
+                }
+
+                foreach (string id in ids)
+                {
                     String consulta = "DELETE FROM clientes WHERE idCliente = '" + id + "' ";
 
                     MySqlConnection conexionBD = Conexion.verificarBD();
                     conexionBD.Open();
-                    
+
                     try
                     {
                         MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
                         cmd.ExecuteNonQuery();
-                        MessageSuccess("El registro se ha sido borrado exitosamente.");
-                        
+                        MessageSuccess("El registro " + id +" se ha sido borrado exitosamente.");
+
 
                     }
                     catch (MySqlException ex)
                     {
-                        MessageError("Error al borrar");
+                        MessageError("Error al borrar el registro "+id+".");
                     }
                     finally
                     {
@@ -108,10 +140,11 @@ namespace PinturasPerfecta
                     }
                     DisplayData();
                 }
-
             }
             else
-                MessageError("Se debe seleccionar toda una fila.");
+            {
+                MessageError("Seleccione un registro.");
+            }
         }
 
         private void buttonModificar_Click(object sender, EventArgs e)
@@ -159,7 +192,19 @@ namespace PinturasPerfecta
                 }
             }
         }
+        private void textBoxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            MySqlConnection conexionBD = Conexion.verificarBD();
+            string valor = textBoxBuscar.Text;
+            conexionBD.Open();
+            DataTable dt = new DataTable();
+            adapt = new MySqlDataAdapter("SELECT * FROM clientes WHERE idCliente LIKE '" + valor + "%' or nombre LIKE '" + valor + "%'  or apellido LIKE '" + valor + "%' or email LIKE '" + valor + "%' or direccion LIKE '" + valor + "%';", conexionBD);
+            adapt.Fill(dt);
 
+            dataGridView1.DataSource = dt;
+            //adapt.Dispose();
+            conexionBD.Close();
+        }
         public void MessageSuccess(string mensaje)
         {
             MessageOK frm = new MessageOK();
@@ -204,5 +249,6 @@ namespace PinturasPerfecta
             frm.labelNombreTabala.Text = "Clientes";
             if(frm.ShowDialog() == DialogResult.OK) DisplayData();
         }
+        
     }
 }

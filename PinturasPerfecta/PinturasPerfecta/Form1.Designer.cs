@@ -39,6 +39,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonHome = new System.Windows.Forms.PictureBox();
             this.panelNav = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.buttonMin = new FontAwesome.Sharp.IconButton();
             this.buttonMax = new FontAwesome.Sharp.IconButton();
             this.buttonClose = new FontAwesome.Sharp.IconButton();
@@ -51,6 +54,8 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonHome)).BeginInit();
             this.panelNav.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).BeginInit();
             this.PanelDeEscritorio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -207,9 +212,8 @@
             // panelNav
             // 
             this.panelNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
-            this.panelNav.Controls.Add(this.buttonMin);
-            this.panelNav.Controls.Add(this.buttonMax);
-            this.panelNav.Controls.Add(this.buttonClose);
+            this.panelNav.Controls.Add(this.panel4);
+            this.panelNav.Controls.Add(this.panel2);
             this.panelNav.Controls.Add(this.currentPositionLabel);
             this.panelNav.Controls.Add(this.HomeIcon);
             this.panelNav.Dock = System.Windows.Forms.DockStyle.Top;
@@ -218,6 +222,34 @@
             this.panelNav.Size = new System.Drawing.Size(986, 44);
             this.panelNav.TabIndex = 1;
             this.panelNav.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelNav_MouseDown);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.panel1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(502, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(280, 44);
+            this.panel4.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(280, 5);
+            this.panel1.TabIndex = 24;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.buttonMin);
+            this.panel2.Controls.Add(this.buttonMax);
+            this.panel2.Controls.Add(this.buttonClose);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(782, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(204, 44);
+            this.panel2.TabIndex = 3;
             // 
             // buttonMin
             // 
@@ -230,12 +262,11 @@
             this.buttonMin.IconColor = System.Drawing.Color.White;
             this.buttonMin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.buttonMin.IconSize = 25;
-            this.buttonMin.Location = new System.Drawing.Point(898, 0);
+            this.buttonMin.Location = new System.Drawing.Point(113, 3);
             this.buttonMin.Name = "buttonMin";
             this.buttonMin.Size = new System.Drawing.Size(26, 22);
-            this.buttonMin.TabIndex = 5;
+            this.buttonMin.TabIndex = 11;
             this.buttonMin.UseVisualStyleBackColor = true;
-            this.buttonMin.Click += new System.EventHandler(this.buttonMin_Click);
             // 
             // buttonMax
             // 
@@ -248,12 +279,11 @@
             this.buttonMax.IconColor = System.Drawing.Color.White;
             this.buttonMax.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.buttonMax.IconSize = 25;
-            this.buttonMax.Location = new System.Drawing.Point(930, 0);
+            this.buttonMax.Location = new System.Drawing.Point(145, 3);
             this.buttonMax.Name = "buttonMax";
             this.buttonMax.Size = new System.Drawing.Size(24, 25);
-            this.buttonMax.TabIndex = 4;
+            this.buttonMax.TabIndex = 10;
             this.buttonMax.UseVisualStyleBackColor = true;
-            this.buttonMax.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // buttonClose
             // 
@@ -266,12 +296,11 @@
             this.buttonClose.IconColor = System.Drawing.Color.White;
             this.buttonClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.buttonClose.IconSize = 25;
-            this.buttonClose.Location = new System.Drawing.Point(960, 0);
+            this.buttonClose.Location = new System.Drawing.Point(175, 3);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(26, 25);
-            this.buttonClose.TabIndex = 3;
+            this.buttonClose.TabIndex = 9;
             this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // currentPositionLabel
             // 
@@ -340,6 +369,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonHome)).EndInit();
             this.panelNav.ResumeLayout(false);
             this.panelNav.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.HomeIcon)).EndInit();
             this.PanelDeEscritorio.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -361,12 +392,15 @@
         private System.Windows.Forms.Label currentPositionLabel;
         private System.Windows.Forms.Panel PanelDeEscritorio;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private FontAwesome.Sharp.IconButton buttonClose;
-        private FontAwesome.Sharp.IconButton buttonMin;
-        private FontAwesome.Sharp.IconButton buttonMax;
         private System.Windows.Forms.Label labelTiempo;
         private System.Windows.Forms.Timer HoraFecha;
         private System.Windows.Forms.Label LabelFecha;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel2;
+        private FontAwesome.Sharp.IconButton buttonMin;
+        private FontAwesome.Sharp.IconButton buttonMax;
+        private FontAwesome.Sharp.IconButton buttonClose;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

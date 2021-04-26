@@ -162,3 +162,7 @@ C:\Users\Uriel\Desktop\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\D
 C:\Users\Uriel\Desktop\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.FormClientescs.resources
 C:\Users\Uriel\Desktop\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.MessageOK.resources
 C:\Users\Uriel\Desktop\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.PantallaCarga.resources
+C:\Users\Uriel\Desktop\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\Pinturas Perfecta.exe.manifest
+C:\Users\Uriel\Desktop\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\Pinturas Perfecta.application
+C:\Users\Uriel\Desktop\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.exe.manifest
+C:\Users\Uriel\Desktop\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.application
