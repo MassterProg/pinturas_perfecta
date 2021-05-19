@@ -301,6 +301,7 @@
             this.buttonClose.Size = new System.Drawing.Size(26, 25);
             this.buttonClose.TabIndex = 9;
             this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click_1);
             // 
             // currentPositionLabel
             // 

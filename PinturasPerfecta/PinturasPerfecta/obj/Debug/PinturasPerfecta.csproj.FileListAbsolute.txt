@@ -116,10 +116,8 @@ D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\b
 D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.csprojAssemblyReference.cache
 D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.exe.config
 D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Clientes.resources
-D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.ClientesModificar.resources
 D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Compras.resources
 D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Form1.resources
-D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.FormularioClientes.resources
 D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Productos.resources
 D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Properties.Resources.resources
 D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.Ventas.resources
@@ -166,3 +164,11 @@ C:\Users\Uriel\Desktop\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\D
 C:\Users\Uriel\Desktop\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\Pinturas Perfecta.application
 C:\Users\Uriel\Desktop\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.exe.manifest
 C:\Users\Uriel\Desktop\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.application
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\Pinturas Perfecta.exe.manifest
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\bin\Debug\Pinturas Perfecta.application
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.FormClientescs.resources
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.FormularioProductos.resources
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.MessageOK.resources
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.PantallaCarga.resources
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.exe.manifest
+D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.application

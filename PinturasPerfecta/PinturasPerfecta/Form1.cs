@@ -185,5 +185,10 @@ namespace PinturasPerfecta
             labelTiempo.Text = DateTime.Now.ToString("h:mm:ss");
             //LabelFecha.Text = DateTime.Now.ToLongDateString();
         }
+
+        private void buttonClose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

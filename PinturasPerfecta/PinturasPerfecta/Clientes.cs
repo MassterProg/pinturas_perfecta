@@ -91,15 +91,19 @@ namespace PinturasPerfecta
         private void buttonElimnar_Click(object sender, EventArgs e)
         {
             int contador = 0;
+            string cadIds="";
+
             foreach (DataGridViewRow row in dataGridView1.Rows)//Se crea un ciclo que saca la cantidad de checkbox seleccionados
             {
+
                 Boolean seleccion = Convert.ToBoolean(row.Cells["checkbox"].Value);
                 if (seleccion)
                 {
                     contador++;
                 }
             }
-            if (contador != 0)
+
+            if (contador != 0)//va a entrar la cantidad de check box que se seleccionaron
             {
                 string[] ids = new string[contador];
                 contador = 0;
@@ -110,35 +114,44 @@ namespace PinturasPerfecta
                     if (seleccion)
                     {
                         ids[contador] = Convert.ToString(row.Cells["idCliente"].Value);
+                        cadIds += Convert.ToString(row.Cells["idCliente"].Value) + ",";
                         contador++;
+
                     }
                 }
 
-                foreach (string id in ids)
+                if (MessageQuestion("¿Seguro que quieres eliminar los siguientes ids?"+"\n"+cadIds) )
                 {
-                    String consulta = "DELETE FROM clientes WHERE idCliente = '" + id + "' ";
-
-                    MySqlConnection conexionBD = Conexion.verificarBD();
-                    conexionBD.Open();
-
-                    try
+                    cadIds = "";
+                    foreach (string id in ids)
                     {
-                        MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
-                        cmd.ExecuteNonQuery();
-                        MessageSuccess("El registro " + id +" se ha sido borrado exitosamente.");
+                        String consulta = "DELETE FROM clientes WHERE idCliente = '" + id + "' ";
 
 
-                    }
-                    catch (MySqlException ex)
-                    {
-                        MessageError("Error al borrar el registro "+id+".");
-                    }
-                    finally
-                    {
-                        conexionBD.Close();
+                        MySqlConnection conexionBD = Conexion.verificarBD();
+                        conexionBD.Open();
+                        try
+                        {
+                            MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
+                            cmd.ExecuteNonQuery();
+                            cadIds += id +",";
 
-                    }
-                    DisplayData();
+                        }
+                        catch (MySqlException ex)
+                        {
+                            MessageError("Error al borrar el registro " + id + ".");
+                            
+                        }
+                        finally
+                        {
+                           
+                            conexionBD.Close();
+
+                        }
+                        DisplayData();
+                    }//final del foreach de id in ids
+                    MessageSuccess("Los siguientes registros se borraron exitosamente" +"\n"+cadIds);
+
                 }
             }
             else
@@ -150,48 +163,73 @@ namespace PinturasPerfecta
         private void buttonModificar_Click(object sender, EventArgs e)
         {
             FormClientescs frm = new FormClientescs();
-            if (dataGridView1.SelectedRows.Count > 0)
+            int contador = 0;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)//Se crea un ciclo que saca la cantidad de checkbox seleccionados
             {
-                frm.boxID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                frm.boxID.Enabled = false;
-                frm.boxNombre.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                frm.boxApellido.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                frm.boxEmail.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                frm.boxDireccion.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                frm.buttonAgregar.Text = "Modificar";
-                if (frm.ShowDialog() == DialogResult.Cancel && frm.entrada)
-                {
-                    String id = frm.boxID.Text;
-                    String nom = frm.boxNombre.Text;
-                    String apeido = frm.boxApellido.Text;
-                    String email = frm.boxEmail.Text;
-                    String dir = frm.boxDireccion.Text;
-
-                    String consulta = "UPDATE clientes SET Nombre='" + nom + "', Apellido='" + apeido + "', Email='" + email + "', Direccion='" + dir + "' WHERE idCliente='" + id + "'";
-
-                    MySqlConnection conexionBD = Conexion.verificarBD();
-                    conexionBD.Open();
-
-                    try
-                    {
-                        MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
-                        cmd.ExecuteNonQuery();
-                        MessageSuccess("La actualización se ha realizado con éxito.");
-                        //limpiar();
-                    }
-                    catch (MySqlException ex)
-                    {
-                        MessageError("Hubo un error al realizar la actualización.");
-                    }
-                    finally
-                    {
-                        conexionBD.Close();
-                    }
-
-                    DisplayData();
+                Boolean seleccion = Convert.ToBoolean(row.Cells["checkbox"].Value);
+                if (seleccion) {
+                    contador++;
                 }
-            }
+                
+            }//final del foreach
+            
+                if (contador == 1)
+                {
+                    frm.boxID.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    frm.boxID.Enabled = false;
+                    frm.boxNombre.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    frm.boxApellido.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    frm.boxEmail.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                    frm.boxDireccion.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    frm.buttonAgregar.Text = "Modificar";
+
+                    if (frm.ShowDialog() == DialogResult.Cancel && frm.entrada)
+                    {
+                        String id = frm.boxID.Text;
+                        String nom = frm.boxNombre.Text;
+                        String apeido = frm.boxApellido.Text;
+                        String email = frm.boxEmail.Text;
+                        String dir = frm.boxDireccion.Text;
+
+                        String consulta = "UPDATE clientes SET Nombre='" + nom + "', Apellido='" + apeido + "', Email='" + email + "', Direccion='" + dir + "' WHERE idCliente='" + id + "'";
+
+                        MySqlConnection conexionBD = Conexion.verificarBD();
+                        conexionBD.Open();
+
+                        try
+                        {
+                            MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
+                            cmd.ExecuteNonQuery();
+                            MessageSuccess("La actualización se ha realizado con éxito.");
+                            //limpiar();
+                        }
+                        catch (MySqlException ex)
+                        {
+                            MessageError("Hubo un error al realizar la actualización.");
+                        }
+                        finally
+                        {
+                            conexionBD.Close();
+                        }
+
+                        DisplayData();
+                    }
+
+
+                }
+                else if (contador > 1)
+                {
+                    MessageError("Solo puedes editar un registro a la vez.");
+                }
+                else
+                {
+                    MessageError("Seleccione un registro a modificar.");
+
+                }
+
         }
+
         private void textBoxBuscar_TextChanged(object sender, EventArgs e)
         {
             MySqlConnection conexionBD = Conexion.verificarBD();
