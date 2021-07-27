@@ -14,7 +14,7 @@ namespace PinturasPerfecta
 {
     public partial class Clientes : Form
     {
-        
+
         MySqlDataAdapter adapt;
         bool firstTime = true;
         public Clientes()
@@ -35,17 +35,16 @@ namespace PinturasPerfecta
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridView1.RowTemplate.Height = 30;
                 dataGridView1.AllowUserToAddRows = false;
-                
+
                 DataGridViewCheckBoxColumn dataCheck = new DataGridViewCheckBoxColumn();
                 dataCheck.HeaderText = "";
                 dataCheck.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dataCheck.Name = "checkbox";
-                
+
                 dataGridView1.RowHeadersVisible = false;
                 dataGridView1.Columns.Insert(0, dataCheck);
-                //dataGridView1.ReadOnly = true;
             }
-            
+
 
             adapt.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -56,7 +55,6 @@ namespace PinturasPerfecta
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
             FormClientescs frm = new FormClientescs();
-
             if (frm.ShowDialog() == DialogResult.Cancel && frm.entrada)
             {
                 String id = frm.boxID.Text;
@@ -93,7 +91,7 @@ namespace PinturasPerfecta
         private void buttonElimnar_Click(object sender, EventArgs e)
         {
             int contador = 0;
-            string cadIds="";
+            string cadIds = "";
 
             foreach (DataGridViewRow row in dataGridView1.Rows)//Se crea un ciclo que saca la cantidad de checkbox seleccionados
             {
@@ -122,7 +120,7 @@ namespace PinturasPerfecta
                     }
                 }
 
-                if (MessageQuestion("¿Seguro que quieres eliminar los siguientes ids?"+"\n"+cadIds) )
+                if (MessageQuestion("¿Seguro que quieres eliminar los siguientes ids?" + "\n" + cadIds))
                 {
                     cadIds = "";
                     foreach (string id in ids)
@@ -136,23 +134,23 @@ namespace PinturasPerfecta
                         {
                             MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
                             cmd.ExecuteNonQuery();
-                            cadIds += id +",";
+                            cadIds += id + ",";
 
                         }
                         catch (MySqlException ex)
                         {
                             MessageError("Error al borrar el registro " + id + ".");
-                            
+
                         }
                         finally
                         {
-                           
+
                             conexionBD.Close();
 
                         }
                         DisplayData();
                     }//final del foreach de id in ids
-                    MessageSuccess("Los siguientes registros se borraron exitosamente" +"\n"+cadIds);
+                    MessageSuccess("Los siguientes registros se borraron exitosamente" + "\n" + cadIds);
 
                 }
             }
@@ -170,65 +168,75 @@ namespace PinturasPerfecta
             foreach (DataGridViewRow row in dataGridView1.Rows)//Se crea un ciclo que saca la cantidad de checkbox seleccionados
             {
                 Boolean seleccion = Convert.ToBoolean(row.Cells["checkbox"].Value);
-                if (seleccion) {
+                if (seleccion)
+                {
                     contador++;
                 }
-                
+
             }//final del foreach
-            
-                if (contador == 1)
-                {
-                    frm.boxID.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                    frm.boxID.Enabled = false;
-                    frm.boxNombre.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                    frm.boxApellido.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                    frm.boxEmail.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                    frm.boxDireccion.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                    frm.buttonAgregar.Text = "Modificar";
 
-                    if (frm.ShowDialog() == DialogResult.Cancel && frm.entrada)
+            if (contador == 1)
+            {
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    bool isSelected = Convert.ToBoolean(row.Cells["checkbox"].Value);
+                    if (isSelected)
                     {
-                        String id = frm.boxID.Text;
-                        String nom = frm.boxNombre.Text;
-                        String apeido = frm.boxApellido.Text;
-                        String email = frm.boxEmail.Text;
-                        String dir = frm.boxDireccion.Text;
+                        /*message += Environment.NewLine;
+                        message += row.Cells["idCliente"].Value.ToString();*/
+                        frm.boxID.Text = row.Cells["idCliente"].Value.ToString();
+                        frm.boxID.Enabled = false;
+                        frm.boxNombre.Text = row.Cells["Nombre"].Value.ToString();
+                        frm.boxApellido.Text = row.Cells["Apellido"].Value.ToString();
+                        frm.boxEmail.Text = row.Cells["Email"].Value.ToString();
+                        frm.boxDireccion.Text = row.Cells["Direccion"].Value.ToString();
+                        frm.buttonAgregar.Text = "Modificar";
 
-                        String consulta = "UPDATE clientes SET Nombre='" + nom + "', Apellido='" + apeido + "', Email='" + email + "', Direccion='" + dir + "' WHERE idCliente='" + id + "'";
-
-                        MySqlConnection conexionBD = Conexion.verificarBD();
-                        conexionBD.Open();
-
-                        try
+                        if (frm.ShowDialog() == DialogResult.Cancel && frm.entrada)
                         {
-                            MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
-                            cmd.ExecuteNonQuery();
-                            MessageSuccess("La actualización se ha realizado con éxito.");
-                            //limpiar();
-                        }
-                        catch (MySqlException ex)
-                        {
-                            MessageError("Hubo un error al realizar la actualización.");
-                        }
-                        finally
-                        {
-                            conexionBD.Close();
-                        }
+                            String id = frm.boxID.Text;
+                            String nom = frm.boxNombre.Text;
+                            String apeido = frm.boxApellido.Text;
+                            String email = frm.boxEmail.Text;
+                            String dir = frm.boxDireccion.Text;
 
-                        DisplayData();
+                            String consulta = "UPDATE clientes SET Nombre='" + nom + "', Apellido='" + apeido + "', Email='" + email + "', Direccion='" + dir + "' WHERE idCliente='" + id + "'";
+
+                            MySqlConnection conexionBD = Conexion.verificarBD();
+                            conexionBD.Open();
+
+                            try
+                            {
+                                MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
+                                cmd.ExecuteNonQuery();
+                                MessageSuccess("La actualización se ha realizado con éxito.");
+                                //limpiar();
+                            }
+                            catch (MySqlException ex)
+                            {
+                                MessageError("Hubo un error al realizar la actualización.");
+                            }
+                            finally
+                            {
+                                conexionBD.Close();
+                            }
+
+                            DisplayData();
+                        }
                     }
-
-
                 }
-                else if (contador > 1)
-                {
-                    MessageError("Solo puedes editar un registro a la vez.");
-                }
-                else
-                {
-                    MessageError("Seleccione un registro a modificar.");
+            }
 
-                }
+            else if (contador > 1)
+            {
+                MessageError("Solo puedes editar un registro a la vez.");
+            }
+            else
+            {
+                MessageError("Seleccione un registro a modificar.");
+
+            }
 
         }
 
@@ -265,7 +273,7 @@ namespace PinturasPerfecta
         }
         public Boolean MessageQuestion(string mensaje)
         {
-            Boolean respuesta=true;
+            Boolean respuesta = true;
             MessageOK frm = new MessageOK();
             frm.button1.Text = "Sí";
             frm.button2.Visible = true;
@@ -287,8 +295,8 @@ namespace PinturasPerfecta
         {
             PantallaCarga frm = new PantallaCarga();
             frm.labelNombreTabala.Text = "Clientes";
-            if(frm.ShowDialog() == DialogResult.OK) DisplayData();
+            if (frm.ShowDialog() == DialogResult.OK) DisplayData();
         }
-        
+
     }
 }

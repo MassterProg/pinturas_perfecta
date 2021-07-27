@@ -41,6 +41,7 @@ namespace PinturasPerfecta
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
+            /*
             FormularioCompras frm = new FormularioCompras();
             if (frm.ShowDialog() == DialogResult.Cancel && frm.entrada)
             {
@@ -75,6 +76,7 @@ namespace PinturasPerfecta
 
                 DisplayData();
             }
+            */
         }
     }
 }
