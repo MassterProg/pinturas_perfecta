@@ -267,6 +267,7 @@
             this.buttonMin.Size = new System.Drawing.Size(26, 22);
             this.buttonMin.TabIndex = 11;
             this.buttonMin.UseVisualStyleBackColor = true;
+            this.buttonMin.Click += new System.EventHandler(this.buttonMin_Click);
             // 
             // buttonMax
             // 
@@ -284,6 +285,7 @@
             this.buttonMax.Size = new System.Drawing.Size(24, 25);
             this.buttonMax.TabIndex = 10;
             this.buttonMax.UseVisualStyleBackColor = true;
+            this.buttonMax.Click += new System.EventHandler(this.buttonMax_Click);
             // 
             // buttonClose
             // 

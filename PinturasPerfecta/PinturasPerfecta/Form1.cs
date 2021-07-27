@@ -153,7 +153,7 @@ namespace PinturasPerfecta
             childForm.Show();             
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void buttonMax_Click(object sender, EventArgs e)
         {
             IconMaxBtn = buttonMax;
 

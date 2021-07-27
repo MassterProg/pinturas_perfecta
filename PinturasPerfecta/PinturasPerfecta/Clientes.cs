@@ -35,7 +35,7 @@ namespace PinturasPerfecta
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridView1.RowTemplate.Height = 30;
                 dataGridView1.AllowUserToAddRows = false;
-
+                
                 DataGridViewCheckBoxColumn dataCheck = new DataGridViewCheckBoxColumn();
                 dataCheck.HeaderText = "";
                 dataCheck.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -43,6 +43,7 @@ namespace PinturasPerfecta
                 
                 dataGridView1.RowHeadersVisible = false;
                 dataGridView1.Columns.Insert(0, dataCheck);
+                dataGridView1.ReadOnly = true;
             }
             
 
@@ -236,7 +237,7 @@ namespace PinturasPerfecta
             string valor = textBoxBuscar.Text;
             conexionBD.Open();
             DataTable dt = new DataTable();
-            adapt = new MySqlDataAdapter("SELECT * FROM clientes WHERE idCliente LIKE '" + valor + "%' or nombre LIKE '" + valor + "%'  or apellido LIKE '" + valor + "%' or email LIKE '" + valor + "%' or direccion LIKE '" + valor + "%';", conexionBD);
+            adapt = new MySqlDataAdapter("SELECT * FROM clientes WHERE idCliente LIKE '%" + valor + "%' or nombre LIKE '%" + valor + "%'  or apellido LIKE '%" + valor + "%' or email LIKE '%" + valor + "%' or direccion LIKE '%" + valor + "%';", conexionBD);
             adapt.Fill(dt);
 
             dataGridView1.DataSource = dt;
