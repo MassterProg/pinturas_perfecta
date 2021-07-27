@@ -43,7 +43,7 @@ namespace PinturasPerfecta
                 
                 dataGridView1.RowHeadersVisible = false;
                 dataGridView1.Columns.Insert(0, dataCheck);
-                dataGridView1.ReadOnly = true;
+                //dataGridView1.ReadOnly = true;
             }
             
 
@@ -56,6 +56,7 @@ namespace PinturasPerfecta
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
             FormClientescs frm = new FormClientescs();
+
             if (frm.ShowDialog() == DialogResult.Cancel && frm.entrada)
             {
                 String id = frm.boxID.Text;

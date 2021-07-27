@@ -116,6 +116,14 @@ namespace PinturasPerfecta
 
             frm.ShowDialog();
         }
+
+        private void buttonLimpar_Click(object sender, EventArgs e)
+        {
+            boxNombre.Text = "";
+            boxApellido.Text = "";
+            boxEmail.Text = "";
+            boxDireccion.Text = "";
+        }
     }
 
 }

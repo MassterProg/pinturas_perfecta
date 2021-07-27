@@ -93,6 +93,7 @@
             this.buttonLimpar.Text = "Limpiar";
             this.buttonLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonLimpar.UseVisualStyleBackColor = true;
+            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
             this.buttonLimpar.MouseEnter += new System.EventHandler(this.buttonAgregar_MouseEnter);
             this.buttonLimpar.MouseLeave += new System.EventHandler(this.buttonAgregar_MouseLeave);
             // 
