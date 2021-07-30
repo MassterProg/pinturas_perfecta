@@ -212,4 +212,3 @@ C:\Users\Uriel\Documents\GitHub\pinturas_perfecta\PinturasPerfecta\PinturasPerfe
 C:\Users\Uriel\Documents\GitHub\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.pdb
 D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.FormularioCompras.resources
 C:\Users\Uriel\Documents\GitHub\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.FormularioCompras.resources
-D:\Documentos\Github Local\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.FormularioVentas.resources
