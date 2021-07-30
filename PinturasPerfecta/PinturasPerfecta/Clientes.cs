@@ -14,15 +14,16 @@ namespace PinturasPerfecta
 {
     public partial class Clientes : Form
     {
-
         MySqlDataAdapter adapt;
         bool firstTime = true;
+
         public Clientes()
         {
             InitializeComponent();
             DisplayData();
             firstTime = false;
         }
+
         public void DisplayData()//Junta los fragmentos y los muestra en el datagrid
         {
             MySqlConnection conexionBD = Conexion.verificarBD();
@@ -52,6 +53,7 @@ namespace PinturasPerfecta
             //adapt.Dispose();
             conexionBD.Close();
         }
+
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
             FormClientescs frm = new FormClientescs();

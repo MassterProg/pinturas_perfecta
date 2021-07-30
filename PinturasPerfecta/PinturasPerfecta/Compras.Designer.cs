@@ -121,6 +121,7 @@
             this.buttonModificar.TabIndex = 4;
             this.buttonModificar.Text = "Modificar";
             this.buttonModificar.UseVisualStyleBackColor = true;
+            this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
             // 
             // buttonElimnar
             // 
@@ -139,8 +140,9 @@
             this.buttonElimnar.Name = "buttonElimnar";
             this.buttonElimnar.Size = new System.Drawing.Size(204, 60);
             this.buttonElimnar.TabIndex = 3;
-            this.buttonElimnar.Text = "Elimnar";
+            this.buttonElimnar.Text = "Eliminar";
             this.buttonElimnar.UseVisualStyleBackColor = true;
+            this.buttonElimnar.Click += new System.EventHandler(this.buttonElimnar_Click);
             // 
             // buttonAgregar
             // 
