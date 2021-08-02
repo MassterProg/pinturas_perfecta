@@ -96,6 +96,7 @@ namespace PinturasPerfecta
             }
 
         }
+
         public void MessageError(string mensaje)
         {
             MessageOK frm = new MessageOK();

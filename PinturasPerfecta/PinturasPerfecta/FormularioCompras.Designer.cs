@@ -59,6 +59,7 @@ namespace PinturasPerfecta
             this.panelNavCompras.Name = "panelNavCompras";
             this.panelNavCompras.Size = new System.Drawing.Size(375, 31);
             this.panelNavCompras.TabIndex = 26;
+            this.panelNavCompras.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelNavCompras_MouseDown);
             // 
             // buttonCloseCompras
             // 
@@ -251,6 +252,7 @@ namespace PinturasPerfecta
             this.buttonLimpar.Text = "Limpiar";
             this.buttonLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonLimpar.UseVisualStyleBackColor = true;
+            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
             // 
             // buttonAgregar
             // 
@@ -271,6 +273,9 @@ namespace PinturasPerfecta
             this.buttonAgregar.Text = "Agregar";
             this.buttonAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAgregar.UseVisualStyleBackColor = true;
+            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
+            this.buttonAgregar.MouseEnter += new System.EventHandler(this.buttonAgregar_MouseEnter);
+            this.buttonAgregar.MouseLeave += new System.EventHandler(this.buttonAgregar_MouseLeave);
             // 
             // FormularioCompras
             // 

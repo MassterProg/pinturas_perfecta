@@ -1,27 +1,23 @@
-﻿using System;
-using FontAwesome.Sharp;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 
 namespace PinturasPerfecta
 {
-    public partial class FormularioCompras : Form
+    public partial class FormularioVentas : Form
     {
         public Boolean entrada;
-        public FormularioCompras()
+        public FormularioVentas()
         {
             InitializeComponent();
-            this.Text = string.Empty;
-            this.ControlBox = false;
-            this.DoubleBuffered = true;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         private void buttonAgregar_Click(object sender, EventArgs e)
@@ -29,23 +25,29 @@ namespace PinturasPerfecta
             System.Text.RegularExpressions.Regex NumeroEntero = new System.Text.RegularExpressions.Regex(@"^(\+|\-)?\d+$");
             System.Text.RegularExpressions.Regex ValidarNombre = new System.Text.RegularExpressions.Regex(@"^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$");
 
-            if (!NumeroEntero.IsMatch(boxFolio.Text))
+            if (!NumeroEntero.IsMatch(boxIDV.Text))
             {
-                MessageError("El formato del Folio no es valido.");
+                MessageError("El formato del id de venta no es valido.");
                 //MessageBox.Show("Id o clave no valida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                boxFolio.Text = "";
-            }           
-            else if (!NumeroEntero.IsMatch(boxCant.Text))
-            {
-                MessageError("Solo use números para las cantidades.");
-                //MessageBox.Show("El email no tiene el formato adecuado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                boxCant.Text = "";
+                boxIDV.Text = "";
             }
-            else if (!NumeroEntero.IsMatch(BoxPrecio.Text))
+            else if (!NumeroEntero.IsMatch(boxidC.Text))
             {
-                MessageError("Solo use números para el precio.");
+                MessageError("El formato del id del usuario no es valido.");
                 //MessageBox.Show("El email no tiene el formato adecuado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                boxCant.Text = "";
+                boxidC.Text = "";
+            }
+            else if (!NumeroEntero.IsMatch(boxidEmp.Text))
+            {
+                MessageError("Solo use números para el id de empleado.");
+                //MessageBox.Show("El email no tiene el formato adecuado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                boxidEmp.Text = "";
+            }
+            else if (!NumeroEntero.IsMatch(boxMT.Text))
+            {
+                MessageError("Solo use números para el monto total.");
+                //MessageBox.Show("El email no tiene el formato adecuado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                boxMT.Text = "";
             }
             else
             {
@@ -58,28 +60,11 @@ namespace PinturasPerfecta
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void panelNavCompras_MouseDown(object sender, MouseEventArgs e)
+        private void panelNav_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-
         }
-
-        private void buttonCloseCompras_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void buttonLimpar_Click(object sender, EventArgs e)
-        {
-            boxCant.Text = "";
-            boxClaveProdu.Text = "";
-            boxFecha.Text = "";
-            boxProd.Text = "";
-            boxProv.Text = "";
-            BoxPrecio.Text = "";
-        }
-
 
         public void MessageError(string mensaje)
         {
@@ -105,6 +90,7 @@ namespace PinturasPerfecta
                 ((IconButton)sender).ForeColor = Color.Orange;
                 ((IconButton)sender).IconColor = Color.Orange;
             }
+
         }
 
         private void buttonAgregar_MouseEnter(object sender, EventArgs e)
