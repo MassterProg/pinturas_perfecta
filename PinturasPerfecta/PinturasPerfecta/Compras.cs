@@ -229,9 +229,11 @@ namespace PinturasPerfecta
                             String claveProd = frm.boxClaveProdu.Text;
                             String cantidad = frm.boxCant.Text;
                             String fecha = frm.boxFecha.Text;
+                            String precio = frm.BoxPrecio.Text;
 
-                            String consulta = "UPDATE productoproveedor SET idProveedor='" + prov + "', idProducto='" + prod + "', Cantidad='" + cantidad + "', Fecha='" + fecha + "' WHERE folio='" + folio + "'";
-
+                            /*String consulta = "UPDATE productoproveedor SET Cantidad='" + cantidad + "', Fecha='" + fecha + "',precio='"+ precio +"' WHERE folio='" + folio + "'";*/
+                            
+                            String consulta = "UPDATE productoproveedor SET Cantidad='" + cantidad + "',precio='" + precio + "', Fecha='" + fecha + "' WHERE folio='" + folio + "'";
                             MySqlConnection conexionBD = Conexion.verificarBD();
                             conexionBD.Open();
 
@@ -245,6 +247,8 @@ namespace PinturasPerfecta
                             catch (MySqlException ex)
                             {
                                 MessageError("Hubo un error al realizar la actualización.");
+                                MessageError(ex.ToString());
+                                
                             }
                             finally
                             {
