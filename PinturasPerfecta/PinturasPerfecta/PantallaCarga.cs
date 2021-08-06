@@ -73,7 +73,9 @@ namespace PinturasPerfecta
         {
             if (openFileDialogCSV.ShowDialog() == DialogResult.OK)
             {
-                string[] lineas = File.ReadAllLines(openFileDialogCSV.FileName);
+                //MessageBox.Show(openFileDialogCSV.FileName);
+
+                string[] lineas = File.ReadAllLines(openFileDialogCSV.FileName, System.Text.Encoding.Default);
                 int contadorFilas = 0;
                 int contadorColumnas = 0;
 
@@ -97,7 +99,7 @@ namespace PinturasPerfecta
                 else
                 {
                     MessageError("El formato del archivo CSV no es el correcto para esta tabala. Verifíquelo de nuevo");
-                }                
+                }
             }
         }
 
