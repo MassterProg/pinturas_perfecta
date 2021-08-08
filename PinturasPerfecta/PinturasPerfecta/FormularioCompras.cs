@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using MySql.Data.MySqlClient;
 
 namespace PinturasPerfecta
 {
@@ -22,6 +23,67 @@ namespace PinturasPerfecta
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            ProcesoLlenadoComboBox("select idProducto, Nombre from productos;", comboBoxProducto);
+            ProcesoLlenadoComboBox("select idProveedor, Nombre from proveedores;", comboBoxProveedores);
+        }
+
+        public class ComboboxItem
+        {
+            public string Text { get; set; }
+            public object Value { get; set; }
+
+            public override string ToString()
+            {
+                return Text;
+            }
+        }
+        private void LlenarComboBox(ComboBox comboBox, string[,] Valores)
+        {
+
+            for (int i = 0; i < Valores.GetLength(1); i++)
+            {
+                ComboboxItem item = new ComboboxItem();
+                item.Text = Valores[1, i];
+                item.Value = Valores[0, i];
+
+                comboBox.Items.Add(item);
+            }
+            comboBox.SelectedIndex = 0;
+        }
+        private void ProcesoLlenadoComboBox(string consulta, ComboBox comboBox)
+        {
+            //Se definen las variables para las conexiones
+            MySqlDataReader reader = null;
+            MySqlConnection conexionBD = Conexion.verificarBD();
+            conexionBD.Open();
+
+            MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);//Se realiza la consulta
+            reader = cmd.ExecuteReader();
+
+            //Se definen las listas para almacenar el contenido de la consulta
+            List<string> listadeId = new List<string>();
+            List<string> listadeNombre = new List<string>();
+
+            //Llenado de las listas con la información obtenida de la consulta
+            while (reader.Read())
+            {
+                //valor += reader.GetString(0) + " - " + reader.GetString(1) + "\n";
+                listadeId.Add(reader.GetString(0));
+                listadeNombre.Add(reader.GetString(1));
+            }
+
+            string[,] valores = new string[2, listadeId.Count];//Se declara la matriz
+
+            //Llenado de la matriz
+            for (int i = 0; i < valores.GetLength(1); i++)
+            {
+                valores[0, i] = listadeId[i];
+                valores[1, i] = listadeNombre[i];
+            }
+            conexionBD.Close();
+
+            LlenarComboBox(comboBox, valores);
         }
 
         private void buttonAgregar_Click(object sender, EventArgs e)
@@ -73,10 +135,10 @@ namespace PinturasPerfecta
         private void buttonLimpar_Click(object sender, EventArgs e)
         {
             boxCant.Text = "";
-            boxClaveProdu.Text = "";
+            //boxClaveProdu.Text = "";
             boxFecha.Text = "";
-            boxProd.Text = "";
-            boxProv.Text = "";
+            //boxProd.Text = "";
+            //boxProv.Text = "";
             BoxPrecio.Text = "";
         }
 
@@ -113,6 +175,9 @@ namespace PinturasPerfecta
             ((IconButton)sender).IconColor = Color.FromArgb(49, 57, 79);
         }
 
-        
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

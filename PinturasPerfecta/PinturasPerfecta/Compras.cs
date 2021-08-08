@@ -212,9 +212,9 @@ namespace PinturasPerfecta
                         message += row.Cells["idCliente"].Value.ToString();*/
                         frm.boxFolio.Text = row.Cells["folio"].Value.ToString();
                         frm.boxFolio.Enabled = false;
-                        frm.boxProv.Text = row.Cells["Proveedor"].Value.ToString(); 
-                        frm.boxProd.Text = row.Cells["Producto"].Value.ToString();
-                        frm.boxClaveProdu.Text = row.Cells["ClaveProducto"].Value.ToString();
+                        //frm.boxProv.Text = row.Cells["Proveedor"].Value.ToString(); 
+                        //frm.boxProd.Text = row.Cells["Producto"].Value.ToString();
+                        //frm.boxClaveProdu.Text = row.Cells["ClaveProducto"].Value.ToString();
                         frm.boxCant.Text = row.Cells["Cantidad"].Value.ToString();
                         frm.boxFecha.Text = row.Cells["Fecha"].Value.ToString();
                         frm.BoxPrecio.Text = row.Cells["Precio"].Value.ToString();
@@ -224,9 +224,9 @@ namespace PinturasPerfecta
                         if (frm.ShowDialog() == DialogResult.Cancel && frm.entrada)
                         {
                             String folio = frm.boxFolio.Text;
-                            String prov = frm.boxProv.Text;
-                            String prod = frm.boxProd.Text;
-                            String claveProd = frm.boxClaveProdu.Text;
+                            //String prov = frm.boxProv.Text;
+                            //String prod = frm.boxProd.Text;
+                            //String claveProd = frm.boxClaveProdu.Text;
                             String cantidad = frm.boxCant.Text;
                             String fecha = frm.boxFecha.Text;
                             String precio = frm.BoxPrecio.Text;

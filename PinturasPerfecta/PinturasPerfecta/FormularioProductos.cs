@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,8 +23,9 @@ namespace PinturasPerfecta
             this.Text = string.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;            
         }
+        
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
@@ -139,8 +141,9 @@ namespace PinturasPerfecta
             return respuesta;
         }
 
-        private void buttonLimpar_Click(object sender, EventArgs e)
+        private void buttonLimpar_Click_1(object sender, EventArgs e)
         {
+            //MessageBox.Show((comboBox1.SelectedItem as ComboboxItem).Value.ToString());
             boxID.Text = "";
             boxDescripción.Text = "";
             boxPrecio.Text = "";

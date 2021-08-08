@@ -216,5 +216,12 @@ namespace PinturasPerfecta
 
             return respuesta;
         }
+
+        private void buttonCargar_Click(object sender, EventArgs e)
+        {
+            PantallaCarga frm = new PantallaCarga();
+            frm.labelNombreTabala.Text = "Clientes";
+            if (frm.ShowDialog() == DialogResult.OK) DisplayData();
+        }
     }
 }

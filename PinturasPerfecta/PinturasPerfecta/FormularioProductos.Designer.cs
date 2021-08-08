@@ -205,6 +205,7 @@
             this.buttonLimpar.Text = "Limpiar";
             this.buttonLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonLimpar.UseVisualStyleBackColor = true;
+            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click_1);
             this.buttonLimpar.MouseEnter += new System.EventHandler(this.buttonAgregar_MouseEnter);
             this.buttonLimpar.MouseLeave += new System.EventHandler(this.buttonAgregar_MouseLeave);
             // 
@@ -276,6 +277,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormularioProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioProductos";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelNav_MouseDown);
             this.panelNav.ResumeLayout(false);
