@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static PinturasPerfecta.FormularioCompras;
 
 namespace PinturasPerfecta
 {
@@ -24,24 +25,7 @@ namespace PinturasPerfecta
             firstTime = false;
         }
 
-        /*public void DisplayData()//Junta los fragmentos y los muestra en el datagrid
-        {
-            MySqlConnection conexionBD = Conexion.verificarBD();
-
-            conexionBD.Open();
-            DataTable dt = new DataTable();
-            adapt = new MySqlDataAdapter("select PP.folio, p.Nombre Proveedor, p2.Nombre Producto, PP.idProducto ClaveProducto, PP.Cantidad, PP.Fecha, PP.Precio from productoproveedor PP inner join proveedores p on p.idProveedor = PP.idProveedor inner join productos p2 on p2.idProducto = PP.idProducto;", conexionBD);//cambiar
-
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.RowTemplate.Height = 30;
-            dataGridView1.AllowUserToAddRows = false;
-
-            adapt.Fill(dt);
-            dataGridView1.DataSource = dt;
-
-            adapt.Dispose();
-            conexionBD.Close();
-        }*/
+       
         public void DisplayData()//Junta los fragmentos y los muestra en el datagrid
         {
             MySqlConnection conexionBD = Conexion.verificarBD();
@@ -149,7 +133,7 @@ namespace PinturasPerfecta
                     cadIds = "";
                     foreach (string id in ids)
                     {
-                        String consulta = "DELETE FROM productoproveedor WHERE folio = '" + id + "' ";
+                        String consulta = "SET FOREIGN_KEY_CHECKS=0; DELETE FROM productoproveedor WHERE folio = '" + id + "'; SET FOREIGN_KEY_CHECKS=1; ";
 
 
                         MySqlConnection conexionBD = Conexion.verificarBD();
@@ -212,9 +196,9 @@ namespace PinturasPerfecta
                         message += row.Cells["idCliente"].Value.ToString();*/
                         frm.boxFolio.Text = row.Cells["folio"].Value.ToString();
                         frm.boxFolio.Enabled = false;
-                        //frm.boxProv.Text = row.Cells["Proveedor"].Value.ToString(); 
-                        //frm.boxProd.Text = row.Cells["Producto"].Value.ToString();
-                        //frm.boxClaveProdu.Text = row.Cells["ClaveProducto"].Value.ToString();
+                        frm.comboBoxProveedores.Text = row.Cells["Proveedor"].Value.ToString(); 
+                        frm.comboBoxProducto.Text = row.Cells["Producto"].Value.ToString();
+                        
                         frm.boxCant.Text = row.Cells["Cantidad"].Value.ToString();
                         frm.boxFecha.Text = row.Cells["Fecha"].Value.ToString();
                         frm.BoxPrecio.Text = row.Cells["Precio"].Value.ToString();
@@ -224,16 +208,15 @@ namespace PinturasPerfecta
                         if (frm.ShowDialog() == DialogResult.Cancel && frm.entrada)
                         {
                             String folio = frm.boxFolio.Text;
-                            //String prov = frm.boxProv.Text;
-                            //String prod = frm.boxProd.Text;
-                            //String claveProd = frm.boxClaveProdu.Text;
+                            String prov = (frm.comboBoxProveedores.SelectedItem as ComboboxItem).Value.ToString(); 
+                            String prod = (frm.comboBoxProducto.SelectedItem as ComboboxItem).Value.ToString();
                             String cantidad = frm.boxCant.Text;
                             String fecha = frm.boxFecha.Text;
                             String precio = frm.BoxPrecio.Text;
 
-                            /*String consulta = "UPDATE productoproveedor SET Cantidad='" + cantidad + "', Fecha='" + fecha + "',precio='"+ precio +"' WHERE folio='" + folio + "'";*/
+                            String consulta = "UPDATE productoproveedor SET idProducto='" + prod + "', idProveedor='" + prov + "', Cantidad='" + cantidad + "', Fecha='" + fecha + "', precio='"+ precio +"' WHERE folio='" + folio + "'";
                             
-                            String consulta = "UPDATE productoproveedor SET Cantidad='" + cantidad + "',precio='" + precio + "', Fecha='" + fecha + "' WHERE folio='" + folio + "'";
+                            //String consulta = "UPDATE productoproveedor SET Cantidad='" + cantidad + "',precio='" + precio + "', Fecha='" + fecha + "' WHERE folio='" + folio + "'";
                             MySqlConnection conexionBD = Conexion.verificarBD();
                             conexionBD.Open();
 

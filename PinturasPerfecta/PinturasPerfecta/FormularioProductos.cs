@@ -143,7 +143,7 @@ namespace PinturasPerfecta
 
         private void buttonLimpar_Click_1(object sender, EventArgs e)
         {
-            //MessageBox.Show((comboBox1.SelectedItem as ComboboxItem).Value.ToString());
+            
             boxID.Text = "";
             boxDescripción.Text = "";
             boxPrecio.Text = "";
