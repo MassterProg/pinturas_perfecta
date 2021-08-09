@@ -9,7 +9,7 @@ namespace PinturasPerfecta
     public class matrices
     {
         public string[,] matriz;
-        private int i = 0;
+        
         public string[,] getmatriz()
         {
             return this.matriz;
