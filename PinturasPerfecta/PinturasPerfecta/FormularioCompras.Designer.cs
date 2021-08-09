@@ -257,6 +257,7 @@ namespace PinturasPerfecta
             this.comboBoxProveedores.Name = "comboBoxProveedores";
             this.comboBoxProveedores.Size = new System.Drawing.Size(205, 28);
             this.comboBoxProveedores.TabIndex = 46;
+            this.comboBoxProveedores.SelectedIndexChanged += new System.EventHandler(this.comboBoxProveedores_SelectedIndexChanged);
             // 
             // FormularioCompras
             // 
@@ -279,6 +280,7 @@ namespace PinturasPerfecta
             this.Controls.Add(this.boxFolio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelNavCompras);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormularioCompras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioCompras";
@@ -304,7 +306,7 @@ namespace PinturasPerfecta
         public System.Windows.Forms.TextBox BoxPrecio;
         private FontAwesome.Sharp.IconButton buttonLimpar;
         public FontAwesome.Sharp.IconButton buttonAgregar;
-        private System.Windows.Forms.ComboBox comboBoxProducto;
-        private System.Windows.Forms.ComboBox comboBoxProveedores;
+        public System.Windows.Forms.ComboBox comboBoxProducto;
+        public System.Windows.Forms.ComboBox comboBoxProveedores;
     }
 }

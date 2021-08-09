@@ -31,8 +31,6 @@ namespace PinturasPerfecta
         {
             this.boxFecha = new System.Windows.Forms.TextBox();
             this.boxMT = new System.Windows.Forms.TextBox();
-            this.boxidEmp = new System.Windows.Forms.TextBox();
-            this.boxidC = new System.Windows.Forms.TextBox();
             this.boxIDV = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,6 +41,8 @@ namespace PinturasPerfecta
             this.buttonAgregar = new FontAwesome.Sharp.IconButton();
             this.panelNav = new System.Windows.Forms.Panel();
             this.buttonClose = new FontAwesome.Sharp.IconButton();
+            this.comboBoxCliente = new System.Windows.Forms.ComboBox();
+            this.comboBoxEmpleado = new System.Windows.Forms.ComboBox();
             this.panelNav.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,28 +67,6 @@ namespace PinturasPerfecta
             this.boxMT.Name = "boxMT";
             this.boxMT.Size = new System.Drawing.Size(175, 30);
             this.boxMT.TabIndex = 44;
-            // 
-            // boxidEmp
-            // 
-            this.boxidEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(79)))));
-            this.boxidEmp.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.boxidEmp.ForeColor = System.Drawing.Color.White;
-            this.boxidEmp.Location = new System.Drawing.Point(129, 111);
-            this.boxidEmp.Multiline = true;
-            this.boxidEmp.Name = "boxidEmp";
-            this.boxidEmp.Size = new System.Drawing.Size(175, 30);
-            this.boxidEmp.TabIndex = 43;
-            // 
-            // boxidC
-            // 
-            this.boxidC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(79)))));
-            this.boxidC.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.boxidC.ForeColor = System.Drawing.Color.White;
-            this.boxidC.Location = new System.Drawing.Point(129, 73);
-            this.boxidC.Multiline = true;
-            this.boxidC.Name = "boxidC";
-            this.boxidC.Size = new System.Drawing.Size(175, 30);
-            this.boxidC.TabIndex = 42;
             // 
             // boxIDV
             // 
@@ -175,6 +153,7 @@ namespace PinturasPerfecta
             this.buttonLimpar.Text = "Limpiar";
             this.buttonLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonLimpar.UseVisualStyleBackColor = true;
+            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
             // 
             // buttonAgregar
             // 
@@ -226,6 +205,33 @@ namespace PinturasPerfecta
             this.buttonClose.Size = new System.Drawing.Size(26, 25);
             this.buttonClose.TabIndex = 3;
             this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            // 
+            // comboBoxCliente
+            // 
+            this.comboBoxCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(79)))));
+            this.comboBoxCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxCliente.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.comboBoxCliente.ForeColor = System.Drawing.Color.White;
+            this.comboBoxCliente.FormattingEnabled = true;
+            this.comboBoxCliente.Location = new System.Drawing.Point(129, 73);
+            this.comboBoxCliente.Name = "comboBoxCliente";
+            this.comboBoxCliente.Size = new System.Drawing.Size(175, 28);
+            this.comboBoxCliente.TabIndex = 47;
+            // 
+            // comboBoxEmpleado
+            // 
+            this.comboBoxEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(79)))));
+            this.comboBoxEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxEmpleado.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.comboBoxEmpleado.ForeColor = System.Drawing.Color.White;
+            this.comboBoxEmpleado.FormattingEnabled = true;
+            this.comboBoxEmpleado.Location = new System.Drawing.Point(129, 110);
+            this.comboBoxEmpleado.Name = "comboBoxEmpleado";
+            this.comboBoxEmpleado.Size = new System.Drawing.Size(175, 28);
+            this.comboBoxEmpleado.TabIndex = 50;
             // 
             // FormularioVentas
             // 
@@ -233,20 +239,22 @@ namespace PinturasPerfecta
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(79)))));
             this.ClientSize = new System.Drawing.Size(336, 339);
+            this.Controls.Add(this.comboBoxEmpleado);
+            this.Controls.Add(this.comboBoxCliente);
             this.Controls.Add(this.panelNav);
             this.Controls.Add(this.buttonLimpar);
             this.Controls.Add(this.buttonAgregar);
             this.Controls.Add(this.boxFecha);
             this.Controls.Add(this.boxMT);
-            this.Controls.Add(this.boxidEmp);
-            this.Controls.Add(this.boxidC);
             this.Controls.Add(this.boxIDV);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormularioVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioVentas";
             this.panelNav.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -258,8 +266,6 @@ namespace PinturasPerfecta
 
         public System.Windows.Forms.TextBox boxFecha;
         public System.Windows.Forms.TextBox boxMT;
-        public System.Windows.Forms.TextBox boxidEmp;
-        public System.Windows.Forms.TextBox boxidC;
         public System.Windows.Forms.TextBox boxIDV;
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label label3;
@@ -270,5 +276,7 @@ namespace PinturasPerfecta
         public FontAwesome.Sharp.IconButton buttonAgregar;
         public System.Windows.Forms.Panel panelNav;
         private FontAwesome.Sharp.IconButton buttonClose;
+        public System.Windows.Forms.ComboBox comboBoxCliente;
+        public System.Windows.Forms.ComboBox comboBoxEmpleado;
     }
 }

@@ -135,11 +135,9 @@ namespace PinturasPerfecta
         private void buttonLimpar_Click(object sender, EventArgs e)
         {
             boxCant.Text = "";
-            //boxClaveProdu.Text = "";
             boxFecha.Text = "";
-            //boxProd.Text = "";
-            //boxProv.Text = "";
             BoxPrecio.Text = "";
+            
         }
 
 
@@ -178,6 +176,11 @@ namespace PinturasPerfecta
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void comboBoxProveedores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
