@@ -54,7 +54,7 @@ namespace PinturasPerfecta
             tabla.RowTemplate.Height = 30;
             tabla.RowHeadersVisible = false;
         }
-        public string [,] ProcesoCargadoMatriz(string []lineas, int filas, int columnas)
+        public string[,] ProcesoCargadoMatriz(string[] lineas, int filas, int columnas)
         {
             string[,] MatrizCargada = new string[filas, columnas];
             for (int i = 0; i < lineas.Length; i++)//Se llena la matriz
@@ -87,7 +87,7 @@ namespace PinturasPerfecta
                 switch (labelNombreTabala.Text)
                 {
                     case "Clientes":
-                        if(contadorColumnas == 5)
+                        if (contadorColumnas == 5)
                         {
                             string[,] MatrizDeCarga = ProcesoCargadoMatriz(lineas, contadorFilas, contadorColumnas);
 
@@ -98,24 +98,37 @@ namespace PinturasPerfecta
                         else
                         {
                             MessageError("El formato del archivo CSV no es el correcto para esta tabala. Verifíquelo de nuevo");
-                        }                        
+                        }
+                        break;
+                    case "Productos":
+                        if (contadorColumnas == 6)
+                        {
+                            string[,] MatrizDeCarga = ProcesoCargadoMatriz(lineas, contadorFilas, contadorColumnas);
+
+                            matriz.setmatriz(MatrizDeCarga);
+                            buttonConfirmar.Enabled = true;
+                            DisplayData(dataGridView1, MatrizDeCarga);
+                        }
+                        else
+                        {
+                            MessageError("El formato del archivo CSV no es el correcto para esta tabala. Verifíquelo de nuevo");
+                        }
+                        break;
+                    case "Compras":
+                        if (contadorColumnas == 10)
+                        {
+                            string[,] MatrizDeCarga = ProcesoCargadoMatriz(lineas, contadorFilas, contadorColumnas);
+
+                            matriz.setmatriz(MatrizDeCarga);
+                            buttonConfirmar.Enabled = true;
+                            DisplayData(dataGridView1, MatrizDeCarga);
+                        }
+                        else
+                        {
+                            MessageError("El formato del archivo CSV no es el correcto para esta tabala. Verifíquelo de nuevo");
+                        }
                         break;
                 }
-
-                /*
-                if ((labelNombreTabala.Text == "Clientes" && contadorColumnas == 5))
-                {
-                    string[,] MatrizDeCarga = ProcesoCargadoMatriz(lineas, contadorFilas, contadorColumnas);
-
-                    matriz.setmatriz(MatrizDeCarga);
-                    buttonConfirmar.Enabled = true;
-                    DisplayData(dataGridView1, MatrizDeCarga);
-                }
-                else
-                {
-                    MessageError("El formato del archivo CSV no es el correcto para esta tabala. Verifíquelo de nuevo");
-                }
-                */
             }
         }
 
@@ -124,7 +137,7 @@ namespace PinturasPerfecta
         {
             ((Button)sender).ForeColor = Color.FromArgb(49, 57, 79);
         }
-                        
+
         private void buttonAgregar_MouseLeave(object sender, EventArgs e)
         {
             if (((Button)sender).Text == "Confirmar" || ((Button)sender).Text == "Sí")
@@ -164,7 +177,7 @@ namespace PinturasPerfecta
                 {
                     MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
                     cmd.ExecuteNonQuery();
-                    
+
                     //limpiar();
                 }
                 catch (MySqlException ex)
