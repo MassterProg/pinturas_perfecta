@@ -1,6 +1,4 @@
-﻿using FontAwesome.Sharp;
-using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,13 +8,15 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FontAwesome.Sharp;
+using MySql.Data.MySqlClient;
 
 namespace PinturasPerfecta
 {
-    public partial class FormularioVentas : Form
+    public partial class FormularioCapuraDeProductos : Form
     {
         public Boolean entrada;
-        public FormularioVentas()
+        public FormularioCapuraDeProductos()
         {
             InitializeComponent();
             this.Text = string.Empty;
@@ -24,10 +24,8 @@ namespace PinturasPerfecta
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
-            ProcesoLlenadoComboBox("select idCliente, Nombre from clientes;", comboBoxCliente);
-            ProcesoLlenadoComboBox("select idEmpleado, Nombre from empleados;", comboBoxEmpleado);
+            ProcesoLlenadoComboBox("select idProducto, Nombre from productos;", comboBoxProducto);
         }
-
         private void ProcesoLlenadoComboBox(string consulta, ComboBox comboBox)
         {
             //Se definen las variables para las conexiones
@@ -87,51 +85,25 @@ namespace PinturasPerfecta
             }
         }
 
-
-        private void buttonAgregar_Click(object sender, EventArgs e)
+        private void buttonCloseCompras_Click(object sender, EventArgs e)
         {
-            System.Text.RegularExpressions.Regex NumeroEntero = new System.Text.RegularExpressions.Regex(@"^(\+|\-)?\d+$");
-            System.Text.RegularExpressions.Regex ValidarNombre = new System.Text.RegularExpressions.Regex(@"^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$");
-
-            if (!NumeroEntero.IsMatch(boxIDV.Text))
-            {
-                MessageError("El formato del id de venta no es valido.");
-                //MessageBox.Show("Id o clave no valida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                boxIDV.Text = "";
-            }
-            else if (!NumeroEntero.IsMatch(boxMT.Text))
-            {
-                MessageError("Solo use números para el monto total.");
-                //MessageBox.Show("El email no tiene el formato adecuado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                boxMT.Text = "";
-            }
-            else
-            {
-                this.Close();
-                entrada = true;
-            }
+            this.Close();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void panelNav_MouseDown(object sender, MouseEventArgs e)
+        private void panelNavCompras_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        public void MessageError(string mensaje)
+        private void buttonAgregar_MouseEnter(object sender, EventArgs e)
         {
-            MessageOK frm = new MessageOK();
-            frm.iconPictureBox1.IconChar = IconChar.ExclamationTriangle;
-            frm.iconPictureBox1.IconColor = Color.FromArgb(255, 128, 128);
-            frm.label1.Text = mensaje;
-            //frm.button2.Visible = true;
-
-            frm.ShowDialog();
-            //MessageBox.Show(frm.ShowDialog().ToString());
+            ((IconButton)sender).ForeColor = Color.FromArgb(49, 57, 79);
+            ((IconButton)sender).IconColor = Color.FromArgb(49, 57, 79);
         }
 
         private void buttonAgregar_MouseLeave(object sender, EventArgs e)
@@ -146,37 +118,13 @@ namespace PinturasPerfecta
                 ((IconButton)sender).ForeColor = Color.Orange;
                 ((IconButton)sender).IconColor = Color.Orange;
             }
-            else if (((IconButton) sender).Text == "Productos")
-            {
-                ((IconButton)sender).ForeColor = Color.GreenYellow;
-                ((IconButton)sender).IconColor = Color.GreenYellow;
-            }
 
         }
 
-        private void buttonAgregar_MouseEnter(object sender, EventArgs e)
+        private void buttonAgregar_Click(object sender, EventArgs e)
         {
-            ((IconButton)sender).ForeColor = Color.FromArgb(49, 57, 79);
-            ((IconButton)sender).IconColor = Color.FromArgb(49, 57, 79);
-        }
-
-        private void buttonLimpar_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show((comboBoxCliente.SelectedItem as ComboboxItem).Value.ToString());
-        }
-
-        private void buttonClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnDetalleVenta_Click(object sender, EventArgs e)
-        {
-            FormularioCapuraDeProductos frm = new FormularioCapuraDeProductos();
-            if (frm.ShowDialog() == DialogResult.Cancel && frm.entrada)
-            {
-                campoTextoVacio.Text = "";
-            }
+           this.Close();
+            entrada = true;
         }
     }
 }

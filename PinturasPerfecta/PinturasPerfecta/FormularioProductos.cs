@@ -95,7 +95,7 @@ namespace PinturasPerfecta
                 ((IconButton)sender).ForeColor = Color.Cyan;
                 ((IconButton)sender).IconColor = Color.Cyan;
             }
-            else
+            else if(((IconButton)sender).Text == "Limpiar")
             {
                 ((IconButton)sender).ForeColor = Color.Orange;
                 ((IconButton)sender).IconColor = Color.Orange;
