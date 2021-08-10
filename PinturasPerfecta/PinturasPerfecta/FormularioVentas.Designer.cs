@@ -43,7 +43,10 @@ namespace PinturasPerfecta
             this.buttonClose = new FontAwesome.Sharp.IconButton();
             this.comboBoxCliente = new System.Windows.Forms.ComboBox();
             this.comboBoxEmpleado = new System.Windows.Forms.ComboBox();
+            this.btnDetalleVenta = new FontAwesome.Sharp.IconButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panelNav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // boxFecha
@@ -51,7 +54,7 @@ namespace PinturasPerfecta
             this.boxFecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(79)))));
             this.boxFecha.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxFecha.ForeColor = System.Drawing.Color.White;
-            this.boxFecha.Location = new System.Drawing.Point(129, 187);
+            this.boxFecha.Location = new System.Drawing.Point(200, 199);
             this.boxFecha.Multiline = true;
             this.boxFecha.Name = "boxFecha";
             this.boxFecha.Size = new System.Drawing.Size(175, 30);
@@ -62,7 +65,7 @@ namespace PinturasPerfecta
             this.boxMT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(79)))));
             this.boxMT.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxMT.ForeColor = System.Drawing.Color.White;
-            this.boxMT.Location = new System.Drawing.Point(129, 149);
+            this.boxMT.Location = new System.Drawing.Point(200, 161);
             this.boxMT.Multiline = true;
             this.boxMT.Name = "boxMT";
             this.boxMT.Size = new System.Drawing.Size(175, 30);
@@ -73,7 +76,7 @@ namespace PinturasPerfecta
             this.boxIDV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(79)))));
             this.boxIDV.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxIDV.ForeColor = System.Drawing.Color.White;
-            this.boxIDV.Location = new System.Drawing.Point(129, 35);
+            this.boxIDV.Location = new System.Drawing.Point(200, 47);
             this.boxIDV.Multiline = true;
             this.boxIDV.Name = "boxIDV";
             this.boxIDV.Size = new System.Drawing.Size(175, 30);
@@ -84,7 +87,7 @@ namespace PinturasPerfecta
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(13, 188);
+            this.label5.Location = new System.Drawing.Point(84, 200);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 21);
             this.label5.TabIndex = 45;
@@ -95,7 +98,7 @@ namespace PinturasPerfecta
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(13, 152);
+            this.label3.Location = new System.Drawing.Point(84, 164);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 21);
             this.label3.TabIndex = 40;
@@ -106,7 +109,7 @@ namespace PinturasPerfecta
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(13, 116);
+            this.label4.Location = new System.Drawing.Point(84, 128);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 21);
             this.label4.TabIndex = 39;
@@ -117,7 +120,7 @@ namespace PinturasPerfecta
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(13, 80);
+            this.label2.Location = new System.Drawing.Point(84, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 21);
             this.label2.TabIndex = 38;
@@ -128,7 +131,7 @@ namespace PinturasPerfecta
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 44);
+            this.label1.Location = new System.Drawing.Point(84, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 21);
             this.label1.TabIndex = 37;
@@ -146,7 +149,7 @@ namespace PinturasPerfecta
             this.buttonLimpar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.buttonLimpar.IconSize = 30;
             this.buttonLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLimpar.Location = new System.Drawing.Point(17, 250);
+            this.buttonLimpar.Location = new System.Drawing.Point(30, 262);
             this.buttonLimpar.Name = "buttonLimpar";
             this.buttonLimpar.Size = new System.Drawing.Size(113, 34);
             this.buttonLimpar.TabIndex = 48;
@@ -167,7 +170,7 @@ namespace PinturasPerfecta
             this.buttonAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.buttonAgregar.IconSize = 32;
             this.buttonAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonAgregar.Location = new System.Drawing.Point(170, 250);
+            this.buttonAgregar.Location = new System.Drawing.Point(296, 262);
             this.buttonAgregar.Name = "buttonAgregar";
             this.buttonAgregar.Size = new System.Drawing.Size(134, 34);
             this.buttonAgregar.TabIndex = 47;
@@ -185,7 +188,7 @@ namespace PinturasPerfecta
             this.panelNav.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelNav.Location = new System.Drawing.Point(0, 0);
             this.panelNav.Name = "panelNav";
-            this.panelNav.Size = new System.Drawing.Size(336, 31);
+            this.panelNav.Size = new System.Drawing.Size(456, 31);
             this.panelNav.TabIndex = 49;
             this.panelNav.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelNav_MouseDown);
             // 
@@ -200,7 +203,7 @@ namespace PinturasPerfecta
             this.buttonClose.IconColor = System.Drawing.Color.White;
             this.buttonClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.buttonClose.IconSize = 25;
-            this.buttonClose.Location = new System.Drawing.Point(309, 0);
+            this.buttonClose.Location = new System.Drawing.Point(429, 0);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(26, 25);
             this.buttonClose.TabIndex = 3;
@@ -215,7 +218,7 @@ namespace PinturasPerfecta
             this.comboBoxCliente.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.comboBoxCliente.ForeColor = System.Drawing.Color.White;
             this.comboBoxCliente.FormattingEnabled = true;
-            this.comboBoxCliente.Location = new System.Drawing.Point(129, 73);
+            this.comboBoxCliente.Location = new System.Drawing.Point(200, 85);
             this.comboBoxCliente.Name = "comboBoxCliente";
             this.comboBoxCliente.Size = new System.Drawing.Size(175, 28);
             this.comboBoxCliente.TabIndex = 47;
@@ -228,17 +231,47 @@ namespace PinturasPerfecta
             this.comboBoxEmpleado.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.comboBoxEmpleado.ForeColor = System.Drawing.Color.White;
             this.comboBoxEmpleado.FormattingEnabled = true;
-            this.comboBoxEmpleado.Location = new System.Drawing.Point(129, 110);
+            this.comboBoxEmpleado.Location = new System.Drawing.Point(200, 122);
             this.comboBoxEmpleado.Name = "comboBoxEmpleado";
             this.comboBoxEmpleado.Size = new System.Drawing.Size(175, 28);
             this.comboBoxEmpleado.TabIndex = 50;
+            // 
+            // btnDetalleVenta
+            // 
+            this.btnDetalleVenta.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
+            this.btnDetalleVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.btnDetalleVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetalleVenta.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalleVenta.ForeColor = System.Drawing.Color.Orange;
+            this.btnDetalleVenta.IconChar = FontAwesome.Sharp.IconChar.ShoppingBag;
+            this.btnDetalleVenta.IconColor = System.Drawing.Color.Orange;
+            this.btnDetalleVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDetalleVenta.IconSize = 30;
+            this.btnDetalleVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetalleVenta.Location = new System.Drawing.Point(149, 262);
+            this.btnDetalleVenta.Name = "btnDetalleVenta";
+            this.btnDetalleVenta.Size = new System.Drawing.Size(141, 34);
+            this.btnDetalleVenta.TabIndex = 51;
+            this.btnDetalleVenta.Text = "Productos";
+            this.btnDetalleVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDetalleVenta.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 315);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(432, 207);
+            this.dataGridView1.TabIndex = 52;
             // 
             // FormularioVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(79)))));
-            this.ClientSize = new System.Drawing.Size(336, 339);
+            this.ClientSize = new System.Drawing.Size(456, 523);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnDetalleVenta);
             this.Controls.Add(this.comboBoxEmpleado);
             this.Controls.Add(this.comboBoxCliente);
             this.Controls.Add(this.panelNav);
@@ -257,6 +290,7 @@ namespace PinturasPerfecta
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioVentas";
             this.panelNav.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,5 +312,7 @@ namespace PinturasPerfecta
         private FontAwesome.Sharp.IconButton buttonClose;
         public System.Windows.Forms.ComboBox comboBoxCliente;
         public System.Windows.Forms.ComboBox comboBoxEmpleado;
+        private FontAwesome.Sharp.IconButton btnDetalleVenta;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
