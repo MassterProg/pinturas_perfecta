@@ -290,6 +290,20 @@ namespace PinturasPerfecta
             return respuesta;
         }
 
-        
+        private void textBoxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            MySqlConnection conexionBD = Conexion.verificarBD();
+            string valor = textBoxBuscar.Text;
+            conexionBD.Open();
+            DataTable dt = new DataTable();
+            adapt = new MySqlDataAdapter("SELECT * FROM ventas WHERE idVenta LIKE '%" + valor + "%' " +
+                "or idCliente LIKE '%" + valor + "%'  or idEmpleado LIKE '%" + valor + "%' " +
+                "or MontoTotal LIKE '%" + valor + "%' or fecha LIKE '%" + valor + "%';", conexionBD);
+            adapt.Fill(dt);
+
+            dataGridView1.DataSource = dt;
+            //adapt.Dispose();
+            conexionBD.Close();
+        }
     }
 }

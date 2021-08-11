@@ -214,7 +214,9 @@ namespace PinturasPerfecta
                             String fecha = frm.boxFecha.Text;
                             String precio = frm.BoxPrecio.Text;
 
-                            String consulta = "UPDATE productoproveedor SET idProducto='" + prod + "', idProveedor='" + prov + "', Cantidad='" + cantidad + "', Fecha='" + fecha + "', precio='"+ precio +"' WHERE folio='" + folio + "'";
+                            String consulta = "UPDATE productoproveedor SET idProducto='" + prod + "', idProveedor='" + prov + "'" +
+                                ", Cantidad='" + cantidad + "', Fecha='" + fecha + "', precio='"+ precio +"' " +
+                                "WHERE folio='" + folio + "'";
                             
                             //String consulta = "UPDATE productoproveedor SET Cantidad='" + cantidad + "',precio='" + precio + "', Fecha='" + fecha + "' WHERE folio='" + folio + "'";
                             MySqlConnection conexionBD = Conexion.verificarBD();
@@ -255,6 +257,7 @@ namespace PinturasPerfecta
             }
         }
 
+        
         //generando las funciones que mandan los mensajes
         public void MessageSuccess(string mensaje)
         {
@@ -294,5 +297,6 @@ namespace PinturasPerfecta
             return respuesta;
         }
 
+        
     }
 }

@@ -105,6 +105,13 @@ namespace PinturasPerfecta
             }
         }
 
+        private void ButtonSumarPrecioProductos_Click(object sender, EventArgs e)
+        {
+            sumarPrecioProductos();
+        }
+
+        
+
         private void buttonElimnar_Click(object sender, EventArgs e)
         {
             int contador = 0;
@@ -180,6 +187,124 @@ namespace PinturasPerfecta
             }
         }
 
+
+        
+
+
+        private void buttonModificar_Click(object sender, EventArgs e)
+        {
+            FormularioProductos frm = new FormularioProductos();
+            int contador = 0;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)//Se crea un ciclo que saca la cantidad de checkbox seleccionados
+            {
+                Boolean seleccion = Convert.ToBoolean(row.Cells["checkbox"].Value);
+                if (seleccion)
+                {
+                    contador++;
+                }
+
+            }//final del foreach
+
+            if (contador == 1)
+            {
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    bool isSelected = Convert.ToBoolean(row.Cells["checkbox"].Value);
+                    if (isSelected)
+                    {
+                        
+                        frm.boxID.Text = row.Cells["Clave"].Value.ToString();
+                        frm.boxID.Enabled = false;
+                        frm.boxDescripción.Text = row.Cells["Descripción"].Value.ToString();
+                        frm.boxPrecio.Text = row.Cells["Precio"].Value.ToString();
+                        frm.boxStock.Text = row.Cells["Stock"].Value.ToString();
+                        frm.boxCantidad.Text = row.Cells["Cantidad"].Value.ToString();
+                        frm.boxUnidad.Text = row.Cells["Unidad"].Value.ToString();
+                        frm.buttonAgregar.Text = "Modificar";
+
+                        if (frm.ShowDialog() == DialogResult.Cancel && frm.entrada)
+                        {
+                            String id = frm.boxID.Text;
+                            String descripcionProd = frm.boxDescripción.Text;
+                            String precio = frm.boxPrecio.Text;
+                            String stock = frm.boxStock.Text;
+                            String cantidad = frm.boxCantidad.Text;
+                            String unidad = frm.boxUnidad.Text;
+
+                            String consulta = "UPDATE productos SET Nombre='" + descripcionProd + "', Precio='" + precio + "'" +
+                                ", Stock='" + stock + "', Cantidad='" + cantidad + "', Unidad='" + unidad + "' " +
+                                "WHERE idProducto='" + id + "'";
+
+                            MySqlConnection conexionBD = Conexion.verificarBD();
+                            conexionBD.Open();
+
+                            try
+                            {
+                                MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
+                                cmd.ExecuteNonQuery();
+                                MessageSuccess("La actualización se ha realizado con éxito.");
+                                //limpiar();
+                            }
+                            catch (MySqlException ex)
+                            {
+                                MessageError("Hubo un error al realizar la actualización.");
+                            }
+                            finally
+                            {
+                                conexionBD.Close();
+                            }
+
+                            DisplayData();
+                        }
+                    }
+                }
+
+            }
+
+        }
+        private void textBoxBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+            MySqlConnection conexionBD = Conexion.verificarBD();
+            string valor = textBoxBuscar.Text;
+            conexionBD.Open();
+            DataTable dt = new DataTable();
+            adapt = new MySqlDataAdapter("SELECT * FROM productos WHERE idProducto LIKE '%" + valor + "%' " +
+                "or Nombre LIKE '%" + valor + "%'  or Precio LIKE '%" + valor + "%' or " +
+                "Stock LIKE '%" + valor + "%' or Cantidad LIKE '%" + valor + "%' or " +
+                "Unidad LIKE '%" + valor + "%';", conexionBD);
+            adapt.Fill(dt);
+
+            dataGridView1.DataSource = dt;
+            //adapt.Dispose();
+            conexionBD.Close();
+        }
+
+        public void sumarPrecioProductos()
+        {
+            int sumaPrecios = 0;
+            string numero;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                numero = row.Cells["Precio"].Value.ToString();
+                sumaPrecios = sumaPrecios + Convert.ToInt32(numero);
+            }
+            MessageSuccessWhitInt(sumaPrecios);
+
+        }
+
+
+        public void MessageSuccessWhitInt(int valor)
+        {
+            MessageOK frm = new MessageOK();
+            string Textonumero = valor.ToString();
+            frm.iconPictureBox1.IconChar = IconChar.CheckSquare;
+            frm.label1.Text = "La suma es igual a: "+Textonumero;
+
+            frm.ShowDialog();
+        }
         public void MessageSuccess(string mensaje)
         {
             MessageOK frm = new MessageOK();
@@ -223,5 +348,7 @@ namespace PinturasPerfecta
             frm.labelNombreTabala.Text = "Productos";
             if (frm.ShowDialog() == DialogResult.OK) DisplayData();
         }
+
+        
     }
 }

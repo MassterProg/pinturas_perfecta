@@ -38,8 +38,13 @@
             this.buttonElimnar = new FontAwesome.Sharp.IconButton();
             this.buttonAgregar = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.textBoxBuscar = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -92,6 +97,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.buttonModificar);
             this.panel1.Controls.Add(this.buttonElimnar);
             this.panel1.Controls.Add(this.buttonAgregar);
@@ -173,6 +179,55 @@
             this.panel3.Size = new System.Drawing.Size(204, 33);
             this.panel3.TabIndex = 0;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.textBoxBuscar);
+            this.panel4.Controls.Add(this.panel6);
+            this.panel4.Controls.Add(this.iconButton1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 415);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(204, 35);
+            this.panel4.TabIndex = 18;
+            // 
+            // textBoxBuscar
+            // 
+            this.textBoxBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
+            this.textBoxBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxBuscar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxBuscar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxBuscar.ForeColor = System.Drawing.Color.Cyan;
+            this.textBoxBuscar.Location = new System.Drawing.Point(43, 0);
+            this.textBoxBuscar.Multiline = true;
+            this.textBoxBuscar.Name = "textBoxBuscar";
+            this.textBoxBuscar.Size = new System.Drawing.Size(161, 30);
+            this.textBoxBuscar.TabIndex = 28;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Cyan;
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(43, 30);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(161, 5);
+            this.panel6.TabIndex = 27;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconButton1.IconColor = System.Drawing.Color.Cyan;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 0);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(43, 35);
+            this.iconButton1.TabIndex = 26;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
             // Compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +240,8 @@
             this.Text = "Compras";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -198,5 +255,9 @@
         private FontAwesome.Sharp.IconButton buttonElimnar;
         private FontAwesome.Sharp.IconButton buttonAgregar;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.TextBox textBoxBuscar;
+        private System.Windows.Forms.Panel panel6;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
