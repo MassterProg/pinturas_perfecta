@@ -255,6 +255,7 @@ namespace PinturasPerfecta
             //adapt.Dispose();
             conexionBD.Close();
         }
+
         public void MessageSuccess(string mensaje)
         {
             MessageOK frm = new MessageOK();
