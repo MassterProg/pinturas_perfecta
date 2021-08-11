@@ -24,6 +24,7 @@ namespace PinturasPerfecta
             DisplayData();
             firstTime = false;
 
+            sumarPrecio();
         }
 
         public void DisplayData()//Junta los fragmentos y los muestra en el datagrid
@@ -66,7 +67,7 @@ namespace PinturasPerfecta
                 String idV = frm.boxIDV.Text;
                 String idCliente = (frm.comboBoxCliente.SelectedItem as ComboboxItem).Value.ToString();
                 String idEmpleado = (frm.comboBoxEmpleado.SelectedItem as ComboboxItem).Value.ToString();
-                String montoT = frm.boxMT.Text;
+                String montoT = frm.labelPrecioTotal.Text;
                 String fecha = frm.boxFecha.Text;
 
                 String consulta = "INSERT INTO ventas (idVenta, idCliente, idEmpleado, MontoTotal, Fecha) VALUES ('" + idV + "','" + idCliente + "', '" + idEmpleado + "', '" + montoT + "', '" + fecha + "')";
@@ -126,7 +127,7 @@ namespace PinturasPerfecta
                         frm.boxIDV.Enabled = false;
                         frm.comboBoxCliente.Text = row.Cells["idCliente"].Value.ToString();
                         frm.comboBoxEmpleado.Text = row.Cells["idEmpleado"].Value.ToString();
-                        frm.boxMT.Text = row.Cells["MontoTotal"].Value.ToString();
+                        frm.labelPrecioTotal.Text = row.Cells["MontoTotal"].Value.ToString();
                         frm.boxFecha.Text = row.Cells["fecha"].Value.ToString();
                         frm.buttonAgregar.Text = "Modificar";
 
@@ -135,7 +136,7 @@ namespace PinturasPerfecta
                             String idVenta = frm.boxIDV.Text;
                             String Cliente = (frm.comboBoxCliente.SelectedItem as ComboboxItem).Value.ToString();
                             String empleado = (frm.comboBoxEmpleado.SelectedItem as ComboboxItem).Value.ToString();
-                            String MontoT = frm.boxMT.Text;
+                            String MontoT = frm.labelPrecioTotal.Text;
                             String Fecha = frm.boxFecha.Text;
 
                             String consulta = "UPDATE ventas SET idCliente='" + Cliente + "', idEmpleado='" + empleado + "', MontoTotal='" + MontoT + "', Fecha='" + Fecha + "' WHERE idVenta='" + idVenta + "'";
@@ -304,6 +305,20 @@ namespace PinturasPerfecta
             dataGridView1.DataSource = dt;
             //adapt.Dispose();
             conexionBD.Close();
+
+            sumarPrecio();
+        }
+
+        public void sumarPrecio()
+        {
+            int sumaPrecios = 0;
+            string numero;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                numero = row.Cells["MontoTotal"].Value.ToString();
+                sumaPrecios = sumaPrecios + Convert.ToInt32(numero);
+            }
+            labelPrecioTotal.Text = sumaPrecios.ToString();
         }
     }
 }

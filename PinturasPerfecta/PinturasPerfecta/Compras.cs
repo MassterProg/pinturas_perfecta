@@ -297,6 +297,9 @@ namespace PinturasPerfecta
             return respuesta;
         }
 
-        
+        private void textBoxBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

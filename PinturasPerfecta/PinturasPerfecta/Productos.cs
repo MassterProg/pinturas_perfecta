@@ -24,6 +24,8 @@ namespace PinturasPerfecta
             InitializeComponent();
             DisplayData();
             firstTime = false;
+
+            sumarPrecio();
         }
         public void DisplayData()//Junta los fragmentos y los muestra en el datagrid
         {
@@ -103,11 +105,6 @@ namespace PinturasPerfecta
 
                 DisplayData();
             }
-        }
-
-        private void ButtonSumarPrecioProductos_Click(object sender, EventArgs e)
-        {
-            sumarPrecioProductos();
         }
 
         
@@ -266,7 +263,6 @@ namespace PinturasPerfecta
         }
         private void textBoxBuscar_TextChanged(object sender, EventArgs e)
         {
-
             MySqlConnection conexionBD = Conexion.verificarBD();
             string valor = textBoxBuscar.Text;
             conexionBD.Open();
@@ -280,21 +276,10 @@ namespace PinturasPerfecta
             dataGridView1.DataSource = dt;
             //adapt.Dispose();
             conexionBD.Close();
+
+            sumarPrecio();
         }
-
-        public void sumarPrecioProductos()
-        {
-            int sumaPrecios = 0;
-            string numero;
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                numero = row.Cells["Precio"].Value.ToString();
-                sumaPrecios = sumaPrecios + Convert.ToInt32(numero);
-            }
-            MessageSuccessWhitInt(sumaPrecios);
-
-        }
-
+        
 
         public void MessageSuccessWhitInt(int valor)
         {
@@ -349,6 +334,16 @@ namespace PinturasPerfecta
             if (frm.ShowDialog() == DialogResult.OK) DisplayData();
         }
 
-        
+        public void sumarPrecio()
+        {
+            int sumaPrecios = 0;
+            string numero;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                numero = row.Cells["Precio"].Value.ToString();
+                sumaPrecios = sumaPrecios + Convert.ToInt32(numero);
+            }
+            labelPrecioTotal.Text = sumaPrecios.ToString();
+        }
     }
 }

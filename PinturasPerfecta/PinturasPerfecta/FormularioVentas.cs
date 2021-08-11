@@ -16,6 +16,62 @@ namespace PinturasPerfecta
     public partial class FormularioVentas : Form
     {
         public Boolean entrada;
+        Boolean PrimeraVez = true;
+
+        //Se crean las listas para el desarrollo de la matriz
+        List<string> listaIdProducto = new List<string>();
+        List<string> listaPrecio = new List<string>();
+        List<string> listaCantidad = new List<string>();
+        List<string> listaStock= new List<string>();
+
+        public void DisplayData(DataGridView tabla, string[,] matriz)//Toma la información de las matrices y las muestra en el datagrid
+        {
+            DataTable dataTable = new DataTable();
+
+            dataTable.Columns.Add("IdProducto");
+            dataTable.Columns.Add("Precio");
+            dataTable.Columns.Add("Cantidad");
+            dataTable.Columns.Add("Stock");
+
+            // add rows to datatable
+            for (int i = 0; i < matriz.GetLength(0); i++)
+            {
+                dataTable.Rows.Add(matriz[i, 0], matriz[i, 1], matriz[i, 2], matriz[i, 3]);
+            }
+            dataGridView1.DataSource = dataTable;
+
+            if (PrimeraVez)
+            {
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.RowTemplate.Height = 30;
+                dataGridView1.AllowUserToAddRows = false;
+
+                DataGridViewCheckBoxColumn dataCheck = new DataGridViewCheckBoxColumn();
+                dataCheck.HeaderText = "";
+                dataCheck.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataCheck.Name = "checkbox";
+                dataGridView1.RowHeadersVisible = false;
+                dataGridView1.Columns.Insert(0, dataCheck);
+
+                PrimeraVez = false;
+            }
+        }
+
+        public void LlenarDatagrid(List<string> listaIdProducto, List<string> listaPrecio, List<string> listaCantidad,List<string> listaStock)
+        {
+            string[,] valores = new string[listaIdProducto.Count, 4];//Se declara la matriz
+
+            //Llenado de la matriz
+            for (int i = 0; i < valores.GetLength(0); i++)
+            {
+                valores[i, 0] = listaIdProducto[i];
+                valores[i, 1] = listaPrecio[i];
+                valores[i, 2] = listaCantidad[i];
+                valores[i, 3] = listaStock[i];
+            }
+            DisplayData(dataGridView1, valores);
+        }
+
         public FormularioVentas()
         {
             InitializeComponent();
@@ -99,12 +155,6 @@ namespace PinturasPerfecta
                 //MessageBox.Show("Id o clave no valida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 boxIDV.Text = "";
             }
-            else if (!NumeroEntero.IsMatch(boxMT.Text))
-            {
-                MessageError("Solo use números para el monto total.");
-                //MessageBox.Show("El email no tiene el formato adecuado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                boxMT.Text = "";
-            }
             else
             {
                 this.Close();
@@ -146,7 +196,7 @@ namespace PinturasPerfecta
                 ((IconButton)sender).ForeColor = Color.Orange;
                 ((IconButton)sender).IconColor = Color.Orange;
             }
-            else if (((IconButton) sender).Text == "Productos")
+            else if (((IconButton)sender).Text == "Productos")
             {
                 ((IconButton)sender).ForeColor = Color.GreenYellow;
                 ((IconButton)sender).IconColor = Color.GreenYellow;
@@ -175,8 +225,29 @@ namespace PinturasPerfecta
             FormularioCapuraDeProductos frm = new FormularioCapuraDeProductos();
             if (frm.ShowDialog() == DialogResult.Cancel && frm.entrada)
             {
+                String prod = frm.idProducto;
+                listaIdProducto.Add(prod);
+                listaPrecio.Add(frm.boxPrecio.Text);
+                listaCantidad.Add(frm.boxCant.Text);
+                listaStock.Add(frm.boxStock.Text);
+
                 campoTextoVacio.Text = "";
+
+                LlenarDatagrid(listaIdProducto, listaPrecio, listaCantidad, listaStock);
+                sumarPrecio();
             }
+        }
+
+        public void sumarPrecio()
+        {
+            int sumaPrecios = 0;
+            string numero;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                numero = row.Cells["Precio"].Value.ToString();
+                sumaPrecios = sumaPrecios + Convert.ToInt32(numero);
+            }
+            labelPrecioTotal.Text= sumaPrecios.ToString();
         }
     }
 }

@@ -16,6 +16,10 @@ namespace PinturasPerfecta
     public partial class FormularioCapuraDeProductos : Form
     {
         public Boolean entrada;
+        public String idProducto = "";
+        private string Precio, Stock, Cantidad, Unidad = "";
+
+
         public FormularioCapuraDeProductos()
         {
             InitializeComponent();
@@ -125,6 +129,37 @@ namespace PinturasPerfecta
         {
            this.Close();
             entrada = true;
+        }
+
+        private void comboBoxProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            idProducto = (comboBoxProducto.SelectedItem as ComboboxItem).Value.ToString();
+            MostrarValores();
+        }
+        
+
+        public void MostrarValores()
+        {
+            MySqlDataReader reader = null;
+            MySqlConnection conexionBD = Conexion.verificarBD();
+            conexionBD.Open();
+
+            MySqlCommand cmd = new MySqlCommand("select Precio,Stock,Cantidad, Unidad from productos where idProducto =" + idProducto, conexionBD);//Se realiza la consulta
+            reader = cmd.ExecuteReader();
+
+            //Llenado de las listas con la información obtenida de la consulta
+            while (reader.Read())
+            {
+                Precio = reader.GetString(0);
+                Stock = reader.GetString(1);
+                Cantidad= reader.GetString(2);
+                Unidad = reader.GetString(3);
+            }
+            conexionBD.Close();
+
+            boxPrecio.Text = Precio;
+            boxCant.Text = Cantidad;
+            boxStock.Text = Stock;
         }
     }
 }

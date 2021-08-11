@@ -33,9 +33,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelNavCompras = new System.Windows.Forms.Panel();
-            this.buttonAgregar = new FontAwesome.Sharp.IconButton();
             this.buttonCloseCompras = new FontAwesome.Sharp.IconButton();
+            this.buttonAgregar = new FontAwesome.Sharp.IconButton();
             this.buttonLimpar = new FontAwesome.Sharp.IconButton();
+            this.boxPrecio = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.boxStock = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelNavCompras.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +55,7 @@
             this.comboBoxProducto.Name = "comboBoxProducto";
             this.comboBoxProducto.Size = new System.Drawing.Size(205, 28);
             this.comboBoxProducto.TabIndex = 60;
+            this.comboBoxProducto.SelectedIndexChanged += new System.EventHandler(this.comboBoxProducto_SelectedIndexChanged);
             // 
             // boxCant
             // 
@@ -96,29 +101,6 @@
             this.panelNavCompras.TabIndex = 47;
             this.panelNavCompras.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelNavCompras_MouseDown);
             // 
-            // buttonAgregar
-            // 
-            this.buttonAgregar.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
-            this.buttonAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
-            this.buttonAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAgregar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAgregar.ForeColor = System.Drawing.Color.Cyan;
-            this.buttonAgregar.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.buttonAgregar.IconColor = System.Drawing.Color.Cyan;
-            this.buttonAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.buttonAgregar.IconSize = 32;
-            this.buttonAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonAgregar.Location = new System.Drawing.Point(216, 179);
-            this.buttonAgregar.Name = "buttonAgregar";
-            this.buttonAgregar.Size = new System.Drawing.Size(134, 34);
-            this.buttonAgregar.TabIndex = 59;
-            this.buttonAgregar.Text = "Agregar";
-            this.buttonAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAgregar.UseVisualStyleBackColor = true;
-            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
-            this.buttonAgregar.MouseEnter += new System.EventHandler(this.buttonAgregar_MouseEnter);
-            this.buttonAgregar.MouseLeave += new System.EventHandler(this.buttonAgregar_MouseLeave);
-            // 
             // buttonCloseCompras
             // 
             this.buttonCloseCompras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -137,6 +119,29 @@
             this.buttonCloseCompras.UseVisualStyleBackColor = true;
             this.buttonCloseCompras.Click += new System.EventHandler(this.buttonCloseCompras_Click);
             // 
+            // buttonAgregar
+            // 
+            this.buttonAgregar.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.buttonAgregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
+            this.buttonAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAgregar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAgregar.ForeColor = System.Drawing.Color.Cyan;
+            this.buttonAgregar.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.buttonAgregar.IconColor = System.Drawing.Color.Cyan;
+            this.buttonAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.buttonAgregar.IconSize = 32;
+            this.buttonAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonAgregar.Location = new System.Drawing.Point(216, 246);
+            this.buttonAgregar.Name = "buttonAgregar";
+            this.buttonAgregar.Size = new System.Drawing.Size(134, 34);
+            this.buttonAgregar.TabIndex = 59;
+            this.buttonAgregar.Text = "Agregar";
+            this.buttonAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAgregar.UseVisualStyleBackColor = true;
+            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
+            this.buttonAgregar.MouseEnter += new System.EventHandler(this.buttonAgregar_MouseEnter);
+            this.buttonAgregar.MouseLeave += new System.EventHandler(this.buttonAgregar_MouseLeave);
+            // 
             // buttonLimpar
             // 
             this.buttonLimpar.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
@@ -149,7 +154,7 @@
             this.buttonLimpar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.buttonLimpar.IconSize = 30;
             this.buttonLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLimpar.Location = new System.Drawing.Point(17, 179);
+            this.buttonLimpar.Location = new System.Drawing.Point(17, 246);
             this.buttonLimpar.Name = "buttonLimpar";
             this.buttonLimpar.Size = new System.Drawing.Size(113, 34);
             this.buttonLimpar.TabIndex = 58;
@@ -159,12 +164,60 @@
             this.buttonLimpar.MouseEnter += new System.EventHandler(this.buttonAgregar_MouseEnter);
             this.buttonLimpar.MouseLeave += new System.EventHandler(this.buttonAgregar_MouseLeave);
             // 
+            // boxPrecio
+            // 
+            this.boxPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(79)))));
+            this.boxPrecio.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxPrecio.ForeColor = System.Drawing.Color.White;
+            this.boxPrecio.Location = new System.Drawing.Point(145, 185);
+            this.boxPrecio.Multiline = true;
+            this.boxPrecio.Name = "boxPrecio";
+            this.boxPrecio.Size = new System.Drawing.Size(205, 30);
+            this.boxPrecio.TabIndex = 62;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(13, 190);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 21);
+            this.label1.TabIndex = 61;
+            this.label1.Text = "Precio";
+            // 
+            // boxStock
+            // 
+            this.boxStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(79)))));
+            this.boxStock.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxStock.ForeColor = System.Drawing.Color.White;
+            this.boxStock.Location = new System.Drawing.Point(145, 143);
+            this.boxStock.Multiline = true;
+            this.boxStock.Name = "boxStock";
+            this.boxStock.Size = new System.Drawing.Size(205, 30);
+            this.boxStock.TabIndex = 64;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(13, 145);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 21);
+            this.label2.TabIndex = 63;
+            this.label2.Text = "Stock";
+            // 
             // FormularioCapuraDeProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
-            this.ClientSize = new System.Drawing.Size(368, 237);
+            this.ClientSize = new System.Drawing.Size(368, 292);
+            this.Controls.Add(this.boxStock);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.boxPrecio);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxProducto);
             this.Controls.Add(this.buttonAgregar);
             this.Controls.Add(this.buttonLimpar);
@@ -190,5 +243,9 @@
         public System.Windows.Forms.Panel panelNavCompras;
         private FontAwesome.Sharp.IconButton buttonCloseCompras;
         private FontAwesome.Sharp.IconButton buttonLimpar;
+        public System.Windows.Forms.TextBox boxPrecio;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox boxStock;
+        public System.Windows.Forms.Label label2;
     }
 }

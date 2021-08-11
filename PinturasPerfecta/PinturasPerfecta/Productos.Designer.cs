@@ -43,7 +43,8 @@
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.buttonCargar = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ButtonSumarPrecioProductos = new FontAwesome.Sharp.IconButton();
+            this.labelPrecioTotal = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -61,7 +62,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
-            this.panel1.Controls.Add(this.ButtonSumarPrecioProductos);
+            this.panel1.Controls.Add(this.labelPrecioTotal);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.buttonModificar);
             this.panel1.Controls.Add(this.buttonElimnar);
             this.panel1.Controls.Add(this.buttonAgregar);
@@ -254,26 +256,28 @@
             this.dataGridView1.Size = new System.Drawing.Size(786, 428);
             this.dataGridView1.TabIndex = 10;
             // 
-            // ButtonSumarPrecioProductos
+            // labelPrecioTotal
             // 
-            this.ButtonSumarPrecioProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonSumarPrecioProductos.FlatAppearance.BorderSize = 0;
-            this.ButtonSumarPrecioProductos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(135)))), ((int)(((byte)(167)))));
-            this.ButtonSumarPrecioProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonSumarPrecioProductos.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonSumarPrecioProductos.ForeColor = System.Drawing.Color.White;
-            this.ButtonSumarPrecioProductos.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.ButtonSumarPrecioProductos.IconColor = System.Drawing.Color.White;
-            this.ButtonSumarPrecioProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ButtonSumarPrecioProductos.IconSize = 40;
-            this.ButtonSumarPrecioProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonSumarPrecioProductos.Location = new System.Drawing.Point(0, 213);
-            this.ButtonSumarPrecioProductos.Name = "ButtonSumarPrecioProductos";
-            this.ButtonSumarPrecioProductos.Size = new System.Drawing.Size(204, 60);
-            this.ButtonSumarPrecioProductos.TabIndex = 20;
-            this.ButtonSumarPrecioProductos.Text = "Sumar precio";
-            this.ButtonSumarPrecioProductos.UseVisualStyleBackColor = true;
-            this.ButtonSumarPrecioProductos.Click += new System.EventHandler(this.ButtonSumarPrecioProductos_Click);
+            this.labelPrecioTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelPrecioTotal.AutoSize = true;
+            this.labelPrecioTotal.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelPrecioTotal.ForeColor = System.Drawing.Color.White;
+            this.labelPrecioTotal.Location = new System.Drawing.Point(63, 308);
+            this.labelPrecioTotal.Name = "labelPrecioTotal";
+            this.labelPrecioTotal.Size = new System.Drawing.Size(0, 23);
+            this.labelPrecioTotal.TabIndex = 56;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(6, 308);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(58, 22);
+            this.label6.TabIndex = 55;
+            this.label6.Text = "Total:";
             // 
             // Productos
             // 
@@ -286,6 +290,7 @@
             this.Name = "Productos";
             this.Text = "Productos";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -306,6 +311,7 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton buttonCargar;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private FontAwesome.Sharp.IconButton ButtonSumarPrecioProductos;
+        public System.Windows.Forms.Label labelPrecioTotal;
+        private System.Windows.Forms.Label label6;
     }
 }
