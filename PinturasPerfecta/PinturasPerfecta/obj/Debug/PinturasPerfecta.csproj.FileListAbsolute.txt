@@ -344,6 +344,3 @@ C:\Users\Uriel\Documents\GitHub\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pint
 C:\Users\Uriel\Documents\GitHub\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.csproj.CopyComplete
 C:\Users\Uriel\Documents\GitHub\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.exe
 C:\Users\Uriel\Documents\GitHub\PinturasPerfecta\PinturasPerfecta\obj\Debug\Pinturas Perfecta.pdb
-C:\Users\Uriel\Documents\GitHub\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.FormularioCapuraDeProductos.resources
-C:\Users\Uriel\Documents\GitHub\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.FormularioDetalleVenta.resources
-C:\Users\Uriel\Documents\GitHub\pinturas_perfecta\PinturasPerfecta\PinturasPerfecta\obj\Debug\PinturasPerfecta.FormularioVentas.resources

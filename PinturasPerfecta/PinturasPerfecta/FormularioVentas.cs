@@ -22,7 +22,6 @@ namespace PinturasPerfecta
         List<string> listaIdProducto = new List<string>();
         List<string> listaPrecio = new List<string>();
         List<string> listaCantidad = new List<string>();
-        List<string> listaStock= new List<string>();
 
         public void DisplayData(DataGridView tabla, string[,] matriz)//Toma la información de las matrices y las muestra en el datagrid
         {
@@ -31,12 +30,11 @@ namespace PinturasPerfecta
             dataTable.Columns.Add("IdProducto");
             dataTable.Columns.Add("Precio");
             dataTable.Columns.Add("Cantidad");
-            dataTable.Columns.Add("Stock");
 
             // add rows to datatable
             for (int i = 0; i < matriz.GetLength(0); i++)
             {
-                dataTable.Rows.Add(matriz[i, 0], matriz[i, 1], matriz[i, 2], matriz[i, 3]);
+                dataTable.Rows.Add(matriz[i, 0], matriz[i, 1], matriz[i, 2]);
             }
             dataGridView1.DataSource = dataTable;
 
@@ -57,7 +55,7 @@ namespace PinturasPerfecta
             }
         }
 
-        public void LlenarDatagrid(List<string> listaIdProducto, List<string> listaPrecio, List<string> listaCantidad,List<string> listaStock)
+        public void LlenarDatagrid(List<string> listaIdProducto, List<string> listaPrecio, List<string> listaCantidad)
         {
             string[,] valores = new string[listaIdProducto.Count, 4];//Se declara la matriz
 
@@ -67,7 +65,6 @@ namespace PinturasPerfecta
                 valores[i, 0] = listaIdProducto[i];
                 valores[i, 1] = listaPrecio[i];
                 valores[i, 2] = listaCantidad[i];
-                valores[i, 3] = listaStock[i];
             }
             DisplayData(dataGridView1, valores);
         }
@@ -229,11 +226,10 @@ namespace PinturasPerfecta
                 listaIdProducto.Add(prod);
                 listaPrecio.Add(frm.boxPrecio.Text);
                 listaCantidad.Add(frm.boxCant.Text);
-                listaStock.Add(frm.boxStock.Text);
 
                 campoTextoVacio.Text = "";
 
-                LlenarDatagrid(listaIdProducto, listaPrecio, listaCantidad, listaStock);
+                LlenarDatagrid(listaIdProducto, listaPrecio, listaCantidad);
                 sumarPrecio();
             }
         }
