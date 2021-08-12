@@ -25,7 +25,7 @@ namespace PinturasPerfecta
             firstTime = false;
         }
 
-       
+
         public void DisplayData()//Junta los fragmentos y los muestra en el datagrid
         {
             MySqlConnection conexionBD = Conexion.verificarBD();
@@ -95,6 +95,28 @@ namespace PinturasPerfecta
             }
             */
         }
+
+        //agregando el evento del buscador
+        private void textBoxBuscar_TextChanged(object sender, EventArgs e)
+        {
+            MySqlConnection conexionBD = Conexion.verificarBD();
+            string valor = textBoxBuscar.Text;
+            conexionBD.Open();
+            DataTable dt = new DataTable();
+           
+            adapt = new MySqlDataAdapter("select PP.folio, p.Nombre Proveedor, p2.Nombre Producto, PP.idProducto ClaveProducto, " +
+                "PP.Cantidad, PP.Fecha, PP.Precio from productoproveedor PP inner join proveedores p on p.idProveedor = PP.idProveedor " +
+                "inner join productos p2 on p2.idProducto = PP.idProducto where PP.cantidad like  '%" + valor + "%' or p.Nombre like '%" + valor + "%' or p2.nombre like '%" + valor + "%' or PP.idProducto like  '%" + valor + "%' or PP.folio like '%" + valor + "%' or PP.fecha like '%" + valor + "%' or PP.Precio like  '%" + valor+"%' ", conexionBD);
+
+            adapt.Fill(dt);
+
+            dataGridView1.DataSource = dt;
+            //adapt.Dispose();
+            conexionBD.Close();
+        }
+
+
+
 
         private void buttonElimnar_Click(object sender, EventArgs e)
         {
@@ -297,9 +319,6 @@ namespace PinturasPerfecta
             return respuesta;
         }
 
-        private void textBoxBuscar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
