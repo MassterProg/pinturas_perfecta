@@ -18,8 +18,9 @@ namespace PinturasPerfecta
         public Boolean entrada;
         public String idProducto = "";
         private string Precio, Stock, Cantidad, Unidad = "";
+        private int valorMaximo = 0;
 
-
+        //public float Height { get; set; }
         public FormularioCapuraDeProductos()
         {
             InitializeComponent();
@@ -29,6 +30,8 @@ namespace PinturasPerfecta
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
             ProcesoLlenadoComboBox("select idProducto, Nombre from productos;", comboBoxProducto);
+            
+            
         }
         private void ProcesoLlenadoComboBox(string consulta, ComboBox comboBox)
         {
@@ -125,16 +128,36 @@ namespace PinturasPerfecta
 
         }
 
+        private void boxCant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.') )
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
-           this.Close();
-            entrada = true;
+            if (int.Parse(boxCant.Text) < valorMaximo)
+            {
+                this.Close();
+                entrada = true;
+            }
         }
 
         private void comboBoxProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
             idProducto = (comboBoxProducto.SelectedItem as ComboboxItem).Value.ToString();
             MostrarValores();
+
+            valorMaximo = (int.Parse(Stock)* int.Parse(Cantidad));
         }
         
 
@@ -159,7 +182,6 @@ namespace PinturasPerfecta
 
             boxPrecio.Text = Precio;
             boxCant.Text = Cantidad;
-            boxStock.Text = Stock;
         }
     }
 }
