@@ -159,6 +159,7 @@ namespace PinturasPerfecta
         private void buttonConfirmar_Click(object sender, EventArgs e)
         {
             string[,] matrizTabla = matriz.getmatriz();
+            String consulta = "";
 
             for (int i = 0; i < matrizTabla.GetLength(0); i++)//Se llena el datagrid
             {
@@ -168,7 +169,14 @@ namespace PinturasPerfecta
                 String email = matrizTabla[i, 3];
                 String dir = matrizTabla[i, 4];
 
-                String consulta = "INSERT INTO clientes (idCliente, Nombre, Apellido, Email, Direccion) VALUES ('" + id + "','" + nom + "', '" + apeido + "', '" + email + "', '" + dir + "')";
+                if (labelNombreTabala.Text == "Clientes")
+                {
+                    consulta = "INSERT INTO clientes (idCliente, Nombre, Apellido, Email, Direccion) VALUES ('" + id + "','" + nom + "', '" + apeido + "', '" + email + "', '" + dir + "')";
+                }
+                else if (labelNombreTabala.Text == "Productos") {
+                   // consulta = "insert into productos () values()"
+                }
+                
 
                 MySqlConnection conexionBD = Conexion.verificarBD();
                 conexionBD.Open();
