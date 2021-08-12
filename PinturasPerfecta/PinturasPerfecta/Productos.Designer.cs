@@ -33,6 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelPrecioTotal = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.buttonModificar = new FontAwesome.Sharp.IconButton();
             this.buttonElimnar = new FontAwesome.Sharp.IconButton();
             this.buttonAgregar = new FontAwesome.Sharp.IconButton();
@@ -43,8 +45,6 @@
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.buttonCargar = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.labelPrecioTotal = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -75,6 +75,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 428);
             this.panel1.TabIndex = 9;
+            // 
+            // labelPrecioTotal
+            // 
+            this.labelPrecioTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelPrecioTotal.AutoSize = true;
+            this.labelPrecioTotal.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
+            this.labelPrecioTotal.ForeColor = System.Drawing.Color.White;
+            this.labelPrecioTotal.Location = new System.Drawing.Point(63, 308);
+            this.labelPrecioTotal.Name = "labelPrecioTotal";
+            this.labelPrecioTotal.Size = new System.Drawing.Size(0, 23);
+            this.labelPrecioTotal.TabIndex = 56;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(6, 308);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(58, 22);
+            this.label6.TabIndex = 55;
+            this.label6.Text = "Total:";
             // 
             // buttonModificar
             // 
@@ -254,30 +277,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Size = new System.Drawing.Size(786, 428);
-            this.dataGridView1.TabIndex = 10;
-            // 
-            // labelPrecioTotal
-            // 
-            this.labelPrecioTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelPrecioTotal.AutoSize = true;
-            this.labelPrecioTotal.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
-            this.labelPrecioTotal.ForeColor = System.Drawing.Color.White;
-            this.labelPrecioTotal.Location = new System.Drawing.Point(63, 308);
-            this.labelPrecioTotal.Name = "labelPrecioTotal";
-            this.labelPrecioTotal.Size = new System.Drawing.Size(0, 23);
-            this.labelPrecioTotal.TabIndex = 56;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(6, 308);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 22);
-            this.label6.TabIndex = 55;
-            this.label6.Text = "Total:";
+            this.dataGridView1.TabIndex = 11;
             // 
             // Productos
             // 
@@ -310,8 +310,8 @@
         private System.Windows.Forms.Panel panel6;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton buttonCargar;
-        private System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.Label labelPrecioTotal;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
