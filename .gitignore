@@ -7,3 +7,7 @@ PinturasPerfecta/PinturasPerfecta/obj/Debug/Pinturas Perfecta.application
 PinturasPerfecta/PinturasPerfecta/obj/Debug/Pinturas Perfecta.exe.manifest
 PinturasPerfecta/PinturasPerfecta/obj/Debug/PinturasPerfecta.csproj.CoreCompileInputs.cache
 PinturasPerfecta/PinturasPerfecta/obj/Debug/PinturasPerfecta.csprojAssemblyReference.cache
+PinturasPerfecta/PinturasPerfecta/obj/Debug/Pinturas Perfecta.exe
+*.exe
+*.pdb
+*.cache
