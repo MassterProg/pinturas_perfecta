@@ -270,44 +270,34 @@ namespace PinturasPerfecta
                     Boolean seleccion = Convert.ToBoolean(row.Cells["checkbox"].Value);
                     if (seleccion)
                     {
-                        ids[contador] = Convert.ToString(row.Cells["idVenta"].Value);
-                        cadIds += Convert.ToString(row.Cells["idVenta"].Value) + ",";
+                        ids[contador] = Convert.ToString(row.Cells["idProducto"].Value);
+                        cadIds += Convert.ToString(row.Cells["idProducto"].Value) + ",";
                         contador++;
                     }
                 }
 
-                if (MessageQuestion("¿Seguro que quieres eliminar los siguientes ids?" + "\n" + cadIds.Remove(cadIds.Length - 1, 1)))
+                if (MessageQuestion("¿Seguro que quieres eliminar los siguientes productos?" + "\n" + cadIds.Remove(cadIds.Length - 1, 1)))
                 {
-                    cadIds = "";
                     foreach (string id in ids)
                     {
-                        String consulta = "SET FOREIGN_KEY_CHECKS=0; DELETE FROM ventas WHERE idVenta = '" + id + "'; SET FOREIGN_KEY_CHECKS=1;";
-
-
-                        MySqlConnection conexionBD = Conexion.verificarBD();
-                        conexionBD.Open();
-                        try
+                        for (int i = 0; i < listaIdProducto.Count; i++)
                         {
-                            MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
-                            cmd.ExecuteNonQuery();
-                            cadIds += id + ",";
+                            if (listaIdProducto[i] == id)
+                            {
+                                listaIdProducto.RemoveAt(i);
+                                listaCantidad.RemoveAt(i);
+                                listaPrecio.RemoveAt(i);
+                                break;
+                            }
                         }
-                        catch (MySqlException ex)
-                        {
-                            MessageError("Error al borrar el registro " + id + ".");
-                        }
-                        finally
-                        {
-                            conexionBD.Close();
-                        }
-                        //DisplayData();
                     }//final del foreach de id in ids
-                    MessageSuccess("Los siguientes registros se borraron exitosamente" + "\n" + cadIds.Remove(cadIds.Length - 1, 1));
+                    LlenarDatagrid(listaIdProducto, listaPrecio, listaCantidad);
                 }
+                sumarPrecio();
             }
             else
             {
-                MessageError("Seleccione un registro.");
+                MessageError("Seleccione un producto.");
             }
         }
         public void MessageSuccess(string mensaje)
