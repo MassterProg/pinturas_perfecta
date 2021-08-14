@@ -38,6 +38,8 @@
             this.buttonLimpar = new FontAwesome.Sharp.IconButton();
             this.boxPrecio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelCantidadMax = new System.Windows.Forms.Label();
             this.panelNavCompras.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -185,12 +187,35 @@
             this.label1.TabIndex = 61;
             this.label1.Text = "Precio";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(13, 202);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(158, 21);
+            this.label2.TabIndex = 63;
+            this.label2.Text = "Cantidad Máxima:";
+            // 
+            // labelCantidadMax
+            // 
+            this.labelCantidadMax.AutoSize = true;
+            this.labelCantidadMax.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCantidadMax.ForeColor = System.Drawing.Color.White;
+            this.labelCantidadMax.Location = new System.Drawing.Point(168, 202);
+            this.labelCantidadMax.Name = "labelCantidadMax";
+            this.labelCantidadMax.Size = new System.Drawing.Size(0, 21);
+            this.labelCantidadMax.TabIndex = 64;
+            // 
             // FormularioCapuraDeProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(49)))), ((int)(((byte)(63)))));
             this.ClientSize = new System.Drawing.Size(368, 292);
+            this.Controls.Add(this.labelCantidadMax);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.boxPrecio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxProducto);
@@ -220,5 +245,7 @@
         private FontAwesome.Sharp.IconButton buttonLimpar;
         public System.Windows.Forms.TextBox boxPrecio;
         public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label labelCantidadMax;
     }
 }
