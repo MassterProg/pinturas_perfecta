@@ -158,6 +158,8 @@ namespace PinturasPerfecta
             MostrarValores();
 
             valorMaximo = (int.Parse(Stock)* int.Parse(Cantidad));
+
+            labelCantidadMax.Text = valorMaximo.ToString();
         }
         
 

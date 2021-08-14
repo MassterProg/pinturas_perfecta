@@ -94,9 +94,35 @@ namespace PinturasPerfecta
 
                 DisplayData();
 
+                for (int i = 0; i < frm.listaCantidad.Count; i++)
+                {
+                    consulta = "insert into detalleventas values(" + frm.boxIDV.Text + ", " + frm.listaIdProducto[i] + ", " + frm.listaPrecio[i] + ", " + frm.listaCantidad[i] + ");";
+
+                    conexionBD = Conexion.verificarBD();
+                    conexionBD.Open();
+
+                    try
+                    {
+                        MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageError("Hubo un error al guardar el registro.");
+                        MessageError(ex.ToString());
+                    }
+                    finally
+                    {
+                        conexionBD.Close();
+                    }
+                }
             }
         }
 
+        private void restarProductos()
+        {
+
+        }
         private void buttonModificar_Click(object sender, EventArgs e)
         {
             FormularioVentas frm = new FormularioVentas();

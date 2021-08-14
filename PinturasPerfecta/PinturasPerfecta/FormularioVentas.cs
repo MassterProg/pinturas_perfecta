@@ -19,9 +19,9 @@ namespace PinturasPerfecta
         Boolean PrimeraVez = true;
 
         //Se crean las listas para el desarrollo de la matriz
-        List<string> listaIdProducto = new List<string>();
-        List<string> listaPrecio = new List<string>();
-        List<string> listaCantidad = new List<string>();
+        public List<string> listaIdProducto = new List<string>();
+        public List<string> listaPrecio = new List<string>();
+        public List<string> listaCantidad = new List<string>();
 
         public void DisplayData(DataGridView tabla, string[,] matriz)//Toma la información de las matrices y las muestra en el datagrid
         {
