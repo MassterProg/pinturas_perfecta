@@ -1,15 +1,3 @@
-Lista Pendientes
 
-(Obligatorios)
-- El buscador de compras no funciona
-- Programar el boton elminar de los detalles de compra
-- Crear funcion para restar o sumar productos a la hora de comprar o vender
-- Ajustar el query principal de ventas
-- Organizar los disenos del buscador
-- Cuando se modifica una venta ver los detalles de la compra
-- Anadir el texto de sumar en compras y ventas
-
-(No Obligatorios)
-- Los imputs de fecha corregirlos
 - NumericUpDown para los detalles de compra
 - Anadir tabla de proveedores

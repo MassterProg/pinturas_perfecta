@@ -245,5 +245,88 @@ namespace PinturasPerfecta
             }
             labelPrecioTotal.Text= sumaPrecios.ToString();
         }
+
+        private void buttonEliminarSeccion_Click(object sender, EventArgs e)
+        {
+            int contador = 0;
+            string cadIds = "";
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)//Se crea un ciclo que saca la cantidad de checkbox seleccionados
+            {
+                Boolean seleccion = Convert.ToBoolean(row.Cells["checkbox"].Value);
+                if (seleccion)
+                {
+                    contador++;
+                }
+            }
+
+            if (contador != 0)//va a entrar la cantidad de check box que se seleccionaron
+            {
+                string[] ids = new string[contador];
+                contador = 0;
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    Boolean seleccion = Convert.ToBoolean(row.Cells["checkbox"].Value);
+                    if (seleccion)
+                    {
+                        ids[contador] = Convert.ToString(row.Cells["idProducto"].Value);
+                        cadIds += Convert.ToString(row.Cells["idProducto"].Value) + ",";
+                        contador++;
+                    }
+                }
+
+                if (MessageQuestion("¿Seguro que quieres eliminar los siguientes productos?" + "\n" + cadIds.Remove(cadIds.Length - 1, 1)))
+                {
+                    foreach (string id in ids)
+                    {
+                        for (int i = 0; i < listaIdProducto.Count; i++)
+                        {
+                            if (listaIdProducto[i] == id)
+                            {
+                                listaIdProducto.RemoveAt(i);
+                                listaCantidad.RemoveAt(i);
+                                listaPrecio.RemoveAt(i);
+                                break;
+                            }
+                        }
+                    }//final del foreach de id in ids
+                    LlenarDatagrid(listaIdProducto, listaPrecio, listaCantidad);
+                }
+                sumarPrecio();
+            }
+            else
+            {
+                MessageError("Seleccione un producto.");
+            }
+        }
+        public void MessageSuccess(string mensaje)
+        {
+            MessageOK frm = new MessageOK();
+            frm.iconPictureBox1.IconChar = IconChar.CheckSquare;
+            frm.label1.Text = mensaje;
+
+            frm.ShowDialog();
+        }
+        public Boolean MessageQuestion(string mensaje)
+        {
+            Boolean respuesta = true;
+            MessageOK frm = new MessageOK();
+            frm.button1.Text = "Sí";
+            frm.button2.Visible = true;
+            frm.label1.Text = mensaje;
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                respuesta = true;
+            }
+            else
+            {
+                respuesta = false;
+            }
+
+            return respuesta;
+        }
+
     }
 }
