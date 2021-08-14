@@ -114,20 +114,7 @@ namespace PinturasPerfecta
                             MessageError("El formato del archivo CSV no es el correcto para esta tabala. Verifíquelo de nuevo");
                         }
                         break;
-                    case "Compras":
-                        if (contadorColumnas == 10)
-                        {
-                            string[,] MatrizDeCarga = ProcesoCargadoMatriz(lineas, contadorFilas, contadorColumnas);
-
-                            matriz.setmatriz(MatrizDeCarga);
-                            buttonConfirmar.Enabled = true;
-                            DisplayData(dataGridView1, MatrizDeCarga);
-                        }
-                        else
-                        {
-                            MessageError("El formato del archivo CSV no es el correcto para esta tabala. Verifíquelo de nuevo");
-                        }
-                        break;
+                    
                 }
             }
         }
@@ -160,37 +147,43 @@ namespace PinturasPerfecta
         {
             string[,] matrizTabla = matriz.getmatriz();
             String consulta = "";
+            
 
             for (int i = 0; i < matrizTabla.GetLength(0); i++)//Se llena el datagrid
             {
-                String id = matrizTabla[i, 0];
-                String nom = matrizTabla[i, 1];
-                String apeido = matrizTabla[i, 2];
-                String email = matrizTabla[i, 3];
-                String dir = matrizTabla[i, 4];
-
+                
                 if (labelNombreTabala.Text == "Clientes")
                 {
+                    String id = matrizTabla[i, 0];
+                    String nom = matrizTabla[i, 1];
+                    String apeido = matrizTabla[i, 2];
+                    String email = matrizTabla[i, 3];
+                    String dir = matrizTabla[i, 4];
                     consulta = "INSERT INTO clientes (idCliente, Nombre, Apellido, Email, Direccion) VALUES ('" + id + "','" + nom + "', '" + apeido + "', '" + email + "', '" + dir + "')";
                 }
                 else if (labelNombreTabala.Text == "Productos") {
-                   // consulta = "insert into productos () values()"
+                    String id = matrizTabla[i, 0];
+                    String nom = matrizTabla[i, 1];
+                    String precio = matrizTabla[i, 2];
+                    String stock = matrizTabla[i, 3];
+                    String cantidad = matrizTabla[i, 4];
+                    String unidad = matrizTabla[i, 5];
+                    consulta = "insert into productos values ('" + id + "','" + nom + "','" + precio + "', '"+stock+"', '"+cantidad+"', '"+unidad+"')";
                 }
                 
 
                 MySqlConnection conexionBD = Conexion.verificarBD();
                 conexionBD.Open();
-
                 try
                 {
                     MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
                     cmd.ExecuteNonQuery();
 
-                    //limpiar();
+                    
                 }
                 catch (MySqlException ex)
                 {
-                    MessageError("Hubo un error al guardar el registro " + id + ".");
+                    MessageError("Hubo un error al guardar los registros.");
                 }
                 finally
                 {
