@@ -33,7 +33,10 @@ namespace PinturasPerfecta
 
             conexionBD.Open();
             DataTable dt = new DataTable();
-            adapt = new MySqlDataAdapter("select * from ventas;", conexionBD);
+            adapt = new MySqlDataAdapter("select  idVenta, c.Nombre as 'Nombre Cliente', " +
+                "e.Nombre as 'Nombre Empleado', MontoTotal, fecha from ventas v " +
+                "inner join clientes c on v.idCliente = c.idCliente inner join empleados e " +
+                "on e.idEmpleado = v.idEmpleado;", conexionBD);
             if (firstTime)
             {
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -151,8 +154,8 @@ namespace PinturasPerfecta
                         message += row.Cells["idCliente"].Value.ToString();*/
                         frm.boxIDV.Text = row.Cells["idVenta"].Value.ToString();
                         frm.boxIDV.Enabled = false;
-                        frm.comboBoxCliente.Text = row.Cells["idCliente"].Value.ToString();
-                        frm.comboBoxEmpleado.Text = row.Cells["idEmpleado"].Value.ToString();
+                        frm.comboBoxCliente.Text = row.Cells["Nombre Cliente"].Value.ToString();
+                        frm.comboBoxEmpleado.Text = row.Cells["Nombre Empleado"].Value.ToString();
                         frm.labelPrecioTotal.Text = row.Cells["MontoTotal"].Value.ToString();
                         frm.boxFecha.Text = row.Cells["fecha"].Value.ToString();
                         frm.buttonAgregar.Text = "Modificar";
