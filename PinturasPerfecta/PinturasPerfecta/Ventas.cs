@@ -119,10 +119,6 @@ namespace PinturasPerfecta
             }
         }
 
-        private void restarProductos()
-        {
-
-        }
         private void buttonModificar_Click(object sender, EventArgs e)
         {
             FormularioVentas frm = new FormularioVentas();

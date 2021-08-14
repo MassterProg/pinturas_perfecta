@@ -245,5 +245,98 @@ namespace PinturasPerfecta
             }
             labelPrecioTotal.Text= sumaPrecios.ToString();
         }
+
+        private void buttonEliminarSeccion_Click(object sender, EventArgs e)
+        {
+            int contador = 0;
+            string cadIds = "";
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)//Se crea un ciclo que saca la cantidad de checkbox seleccionados
+            {
+                Boolean seleccion = Convert.ToBoolean(row.Cells["checkbox"].Value);
+                if (seleccion)
+                {
+                    contador++;
+                }
+            }
+
+            if (contador != 0)//va a entrar la cantidad de check box que se seleccionaron
+            {
+                string[] ids = new string[contador];
+                contador = 0;
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    Boolean seleccion = Convert.ToBoolean(row.Cells["checkbox"].Value);
+                    if (seleccion)
+                    {
+                        ids[contador] = Convert.ToString(row.Cells["idVenta"].Value);
+                        cadIds += Convert.ToString(row.Cells["idVenta"].Value) + ",";
+                        contador++;
+                    }
+                }
+
+                if (MessageQuestion("¿Seguro que quieres eliminar los siguientes ids?" + "\n" + cadIds.Remove(cadIds.Length - 1, 1)))
+                {
+                    cadIds = "";
+                    foreach (string id in ids)
+                    {
+                        String consulta = "SET FOREIGN_KEY_CHECKS=0; DELETE FROM ventas WHERE idVenta = '" + id + "'; SET FOREIGN_KEY_CHECKS=1;";
+
+
+                        MySqlConnection conexionBD = Conexion.verificarBD();
+                        conexionBD.Open();
+                        try
+                        {
+                            MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
+                            cmd.ExecuteNonQuery();
+                            cadIds += id + ",";
+                        }
+                        catch (MySqlException ex)
+                        {
+                            MessageError("Error al borrar el registro " + id + ".");
+                        }
+                        finally
+                        {
+                            conexionBD.Close();
+                        }
+                        //DisplayData();
+                    }//final del foreach de id in ids
+                    MessageSuccess("Los siguientes registros se borraron exitosamente" + "\n" + cadIds.Remove(cadIds.Length - 1, 1));
+                }
+            }
+            else
+            {
+                MessageError("Seleccione un registro.");
+            }
+        }
+        public void MessageSuccess(string mensaje)
+        {
+            MessageOK frm = new MessageOK();
+            frm.iconPictureBox1.IconChar = IconChar.CheckSquare;
+            frm.label1.Text = mensaje;
+
+            frm.ShowDialog();
+        }
+        public Boolean MessageQuestion(string mensaje)
+        {
+            Boolean respuesta = true;
+            MessageOK frm = new MessageOK();
+            frm.button1.Text = "Sí";
+            frm.button2.Visible = true;
+            frm.label1.Text = mensaje;
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                respuesta = true;
+            }
+            else
+            {
+                respuesta = false;
+            }
+
+            return respuesta;
+        }
+
     }
 }

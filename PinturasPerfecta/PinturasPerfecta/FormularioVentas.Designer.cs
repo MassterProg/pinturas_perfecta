@@ -341,6 +341,7 @@ namespace PinturasPerfecta
             this.buttonEliminarSeccion.Size = new System.Drawing.Size(41, 34);
             this.buttonEliminarSeccion.TabIndex = 55;
             this.buttonEliminarSeccion.UseVisualStyleBackColor = true;
+            this.buttonEliminarSeccion.Click += new System.EventHandler(this.buttonEliminarSeccion_Click);
             // 
             // FormularioVentas
             // 
