@@ -156,6 +156,40 @@ namespace PinturasPerfecta
                         frm.boxFecha.Text = row.Cells["fecha"].Value.ToString();
                         frm.buttonAgregar.Text = "Modificar";
 
+
+
+                        MySqlDataReader reader = null;
+                        MySqlConnection conexionBD = Conexion.verificarBD();
+                        conexionBD.Open();
+
+                        string consulta = "select * from detalleventas where idventa = "+ row.Cells["idVenta"].Value.ToString() + "";
+
+                        MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);//Se realiza la consulta
+                        reader = cmd.ExecuteReader();
+
+                        //Llenado de las listas con la información obtenida de la consulta
+                        while (reader.Read())
+                        {
+                            //valor += reader.GetString(0) + " - " + reader.GetString(1) + "\n";
+                            frm.listaIdProducto.Add(reader.GetString(1));
+                            frm.listaPrecio.Add(reader.GetString(2));
+                            frm.listaCantidad.Add(reader.GetString(3));
+                        }
+                        string[,] valores = new string[3, frm.listaIdProducto.Count];//Se declara la matriz
+
+                        for (int i = 0; i < valores.GetLength(1); i++)
+                        {
+                            valores[0, i] = frm.listaIdProducto[i];
+                            valores[1, i] = frm.listaPrecio[i];
+                            valores[2, i] = frm.listaCantidad[i];
+                        }
+
+                        MessageBox.Show(valores.Length.ToString());
+                        conexionBD.Close();
+
+                        frm.campoTextoVacio.Text = "";
+                        frm.LlenarDatagrid(frm.listaIdProducto, frm.listaPrecio, frm.listaCantidad);
+                        
                         if (frm.ShowDialog() == DialogResult.Cancel && frm.entrada)
                         {
                             String idVenta = frm.boxIDV.Text;
@@ -164,14 +198,14 @@ namespace PinturasPerfecta
                             String MontoT = frm.labelPrecioTotal.Text;
                             String Fecha = frm.boxFecha.Text;
 
-                            String consulta = "UPDATE ventas SET idCliente='" + Cliente + "', idEmpleado='" + empleado + "', MontoTotal='" + MontoT + "', Fecha='" + Fecha + "' WHERE idVenta='" + idVenta + "'";
+                            consulta = "UPDATE ventas SET idCliente='" + Cliente + "', idEmpleado='" + empleado + "', MontoTotal='" + MontoT + "', Fecha='" + Fecha + "' WHERE idVenta='" + idVenta + "'";
                             
-                            MySqlConnection conexionBD = Conexion.verificarBD();
+                            conexionBD = Conexion.verificarBD();
                             conexionBD.Open();
 
                             try
                             {
-                                MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
+                                cmd = new MySqlCommand(consulta, conexionBD);
                                 cmd.ExecuteNonQuery();
                                 MessageSuccess("La actualización se ha realizado con éxito.");
                                 //limpiar();
