@@ -147,7 +147,7 @@ namespace PinturasPerfecta
                     cadIds = "";
                     foreach (string id in ids)
                     {
-                        String consulta = "SET FOREIGN_KEY_CHECKS=0; DELETE FROM productos WHERE idProducto = '" + id + "'; SET FOREIGN_KEY_CHECKS=1; ";
+                        String consulta = "DELETE FROM productos WHERE idProducto = '" + id + "'";
 
                         MySqlConnection conexionBD = Conexion.verificarBD();
                         conexionBD.Open();
@@ -155,27 +155,30 @@ namespace PinturasPerfecta
                         {
                             MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
                             cmd.ExecuteNonQuery();
-                            if (++contadorForEach == ids.Length)
-                            {
-                                cadIds += id;
-                            }
-                            else
-                            {
-                                cadIds += id + ",";
-                            }
+                            cadIds += id + ",";
                         }
                         catch (MySqlException ex)
                         {
-                            MessageError("Error al borrar el registro " + id + ".");
+                            String error = "Cannot delete or update a parent row";
+                            if (ex.ToString().Contains(error))
+                            {
+                                MessageError("La venta " + id + " está siendo utilizado en otra tabla. No puede ser eliminado.");
+                            }
+                            else
+                            {
+                                MessageError("Error al borrar el registro " + id + ".");
+                            }
                         }
                         finally
                         {
                             conexionBD.Close();
                         }
-                        DisplayData();
                     }//final del foreach de id in ids
-                    MessageSuccess("Los siguientes registros se borraron exitosamente" + "\n" + cadIds);
-
+                    if (cadIds.Length != 0)
+                    {
+                        MessageSuccess("Los siguientes registros se borraron exitosamente" + "\n" + cadIds.Remove(cadIds.Length - 1, 1));
+                    }
+                    DisplayData();
                 }
             }
             else

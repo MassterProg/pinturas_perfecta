@@ -97,7 +97,6 @@ namespace PinturasPerfecta
 
             foreach (DataGridViewRow row in dataGridView1.Rows)//Se crea un ciclo que saca la cantidad de checkbox seleccionados
             {
-
                 Boolean seleccion = Convert.ToBoolean(row.Cells["checkbox"].Value);
                 if (seleccion)
                 {
@@ -141,19 +140,26 @@ namespace PinturasPerfecta
                         }
                         catch (MySqlException ex)
                         {
-                            MessageError("Error al borrar el registro " + id + ".");
-
+                            String error = "Cannot delete or update a parent row";
+                            if (ex.ToString().Contains(error))
+                            {
+                                MessageError("El clientte " + id + " está siendo utilizado en otra tabla. No puede ser eliminado.");
+                            }
+                            else
+                            {
+                                MessageError("Error al borrar el registro " + id + ".");
+                            }
                         }
                         finally
                         {
-
                             conexionBD.Close();
-
                         }
-                        DisplayData();
                     }//final del foreach de id in ids
-                    MessageSuccess("Los siguientes registros se borraron exitosamente" + "\n" + cadIds.Remove(cadIds.Length - 1, 1));
-
+                    if (cadIds.Length != 0)
+                    {
+                        MessageSuccess("Los siguientes registros se borraron exitosamente" + "\n" + cadIds.Remove(cadIds.Length - 1, 1));
+                    }
+                    DisplayData();
                 }
             }
             else

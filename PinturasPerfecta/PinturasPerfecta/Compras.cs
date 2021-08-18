@@ -58,26 +58,25 @@ namespace PinturasPerfecta
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
-            /*
             FormularioCompras frm = new FormularioCompras();
             if (frm.ShowDialog() == DialogResult.Cancel && frm.entrada)
             {
                 String Folio = frm.boxFolio.Text;
-                String Proveedor = frm.boxProv.Text;
-                String Producto = frm.boxProd.Text;
-                String ClaveProdu = frm.boxClaveProdu.Text;
+                String prov = (frm.comboBoxProveedores.SelectedItem as ComboboxItem).Value.ToString();
+                String prod = (frm.comboBoxProducto.SelectedItem as ComboboxItem).Value.ToString();
                 String Cantidad = frm.boxCant.Text;
                 String fecha = frm.boxFecha.Text;
                 String precio = frm.BoxPrecio.Text;
 
-                String consulta = "INSERT INTO productoproveedor (folio, idProveedor, idProducto, Cantidad, Fecha, Precio ) VALUES ('" + Folio + "','" + Proveedor + "', '" + Producto + "', '" + ClaveProdu + "', '" + dir + "')";
+                string Consulta = "INSERT INTO `productoproveedor` (`folio`, `idProveedor`, `idProducto`, `Cantidad`, `fecha`, `Precio`) " +
+                                  "values('"+ Folio + "', "+prov+", "+prod+", "+Cantidad+", "+fecha+", "+precio+")";
 
                 MySqlConnection conexionBD = Conexion.verificarBD();
                 conexionBD.Open();
 
                 try
                 {
-                    MySqlCommand cmd = new MySqlCommand(consulta, conexionBD);
+                    MySqlCommand cmd = new MySqlCommand(Consulta, conexionBD);
                     cmd.ExecuteNonQuery();
                     MessageSuccess("El registro ha sido guarado exitosamente.");
                     //limpiar();
@@ -93,7 +92,6 @@ namespace PinturasPerfecta
 
                 DisplayData();
             }
-            */
         }
 
         //agregando el evento del buscador
@@ -155,8 +153,7 @@ namespace PinturasPerfecta
                     cadIds = "";
                     foreach (string id in ids)
                     {
-                        String consulta = "SET FOREIGN_KEY_CHECKS=0; DELETE FROM productoproveedor WHERE folio = '" + id + "'; SET FOREIGN_KEY_CHECKS=1; ";
-
+                        String consulta = "set foreign_key_checks=0; DELETE FROM productoproveedor WHERE folio = '" + id + "'; set foreign_key_checks=1;";
 
                         MySqlConnection conexionBD = Conexion.verificarBD();
                         conexionBD.Open();
@@ -169,19 +166,27 @@ namespace PinturasPerfecta
                         }
                         catch (MySqlException ex)
                         {
-                            MessageError("Error al borrar el registro " + id + ".");
-
+                            String error = "Cannot delete or update a parent row";
+                            if (ex.ToString().Contains(error))
+                            {
+                                MessageError("La compra " + id + " está siendo utilizado en otra tabla. No puede ser eliminado.");
+                            }
+                            else
+                            {
+                                MessageError("Error al borrar el registro " + id + ".");
+                            }
+                            //richTextBox1.Text = ex.ToString();
                         }
                         finally
                         {
-
                             conexionBD.Close();
-
                         }
-                        DisplayData();
                     }//final del foreach de id in ids
-                    MessageSuccess("Los siguientes registros se borraron exitosamente" + "\n" + cadIds);
-
+                    if (cadIds.Length != 0)
+                    {
+                        MessageSuccess("Los siguientes registros se borraron exitosamente" + "\n" + cadIds.Remove(cadIds.Length - 1, 1));
+                    }
+                    DisplayData();
                 }
             }
             else

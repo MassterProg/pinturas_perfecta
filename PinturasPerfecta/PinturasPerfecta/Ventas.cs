@@ -274,7 +274,7 @@ namespace PinturasPerfecta
                     cadIds = "";
                     foreach (string id in ids)
                     {
-                        String consulta = "SET FOREIGN_KEY_CHECKS=0; DELETE FROM ventas WHERE idVenta = '" + id + "'; SET FOREIGN_KEY_CHECKS=1;";
+                        String consulta = "set foreign_key_checks=0; DELETE FROM ventas WHERE idVenta = '" + id + "'; set foreign_key_checks=1;";
 
 
                         MySqlConnection conexionBD = Conexion.verificarBD();
@@ -288,8 +288,15 @@ namespace PinturasPerfecta
                         }
                         catch (MySqlException ex)
                         {
-                            MessageError("Error al borrar el registro " + id + ".");
-
+                            String error = "Cannot delete or update a parent row";
+                            if (ex.ToString().Contains(error))
+                            {
+                                MessageError("La venta " + id + " está siendo utilizado en otra tabla. No puede ser eliminado.");
+                            }
+                            else
+                            {
+                                MessageError("Error al borrar el registro " + id + ".");
+                            }
                         }
                         finally
                         {
@@ -297,10 +304,12 @@ namespace PinturasPerfecta
                             conexionBD.Close();
 
                         }
-                        DisplayData();
                     }//final del foreach de id in ids
-                    MessageSuccess("Los siguientes registros se borraron exitosamente" + "\n" + cadIds.Remove(cadIds.Length - 1, 1));
-
+                    if (cadIds.Length != 0)
+                    {
+                        MessageSuccess("Los siguientes registros se borraron exitosamente" + "\n" + cadIds.Remove(cadIds.Length - 1, 1));
+                    }
+                    DisplayData();
                 }
             }
             else
